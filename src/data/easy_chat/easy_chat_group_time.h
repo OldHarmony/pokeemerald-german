@@ -96,16 +96,16 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     [EC_INDEX(EC_WORD_FALL)] =
     {
         .text = gEasyChatWord_Fall,
-        .alphabeticalOrder = 29,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AGE),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_MORNING)] =
     {
         .text = gEasyChatWord_Morning,
 #if ENGLISH
-        .alphabeticalOrder = 39,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ALMOST),
 #elif GERMAN
-        .alphabeticalOrder = 18,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ANOTHER),
 #endif
         .enabled = TRUE,
     },
@@ -113,9 +113,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Tomorrow,
 #if ENGLISH
-        .alphabeticalOrder = 6,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ALWAYS),
 #elif GERMAN
-        .alphabeticalOrder = 33,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BEGINNING),
 #endif
         .enabled = TRUE,
     },
@@ -123,9 +123,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Last,
 #if ENGLISH
-        .alphabeticalOrder = 18,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ANOTHER),
 #elif GERMAN
-        .alphabeticalOrder = 22,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SOON),
 #endif
         .enabled = TRUE,
     },
@@ -133,9 +133,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Day,
 #if ENGLISH
-        .alphabeticalOrder = 33,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BEGINNING),
 #elif GERMAN
-        .alphabeticalOrder = 40,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NEARLY),
 #endif
         .enabled = TRUE,
     },
@@ -143,9 +143,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Sometime,
 #if ENGLISH
-        .alphabeticalOrder = 7,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CURRENT),
 #elif GERMAN
-        .alphabeticalOrder = 42,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NIGHTTIME),
 #endif
         .enabled = TRUE,
     },
@@ -153,9 +153,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Always,
 #if ENGLISH
-        .alphabeticalOrder = 37,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DAILY),
 #elif GERMAN
-        .alphabeticalOrder = 38,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OLDEN),
 #endif
         .enabled = TRUE,
     },
@@ -163,9 +163,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Current,
 #if ENGLISH
-        .alphabeticalOrder = 4,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DAY),
 #elif GERMAN
-        .alphabeticalOrder = 11,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TUESDAY),
 #endif
         .enabled = TRUE,
     },
@@ -173,9 +173,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Forever,
 #if ENGLISH
-        .alphabeticalOrder = 9,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DAYS),
 #elif GERMAN
-        .alphabeticalOrder = 41,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_THURSDAY),
 #endif
         .enabled = TRUE,
     },
@@ -183,9 +183,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Days,
 #if ENGLISH
-        .alphabeticalOrder = 35,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DAYTIME),
 #elif GERMAN
-        .alphabeticalOrder = 10,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_END),
 #endif
         .enabled = TRUE,
     },
@@ -193,9 +193,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_End,
 #if ENGLISH
-        .alphabeticalOrder = 17,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_EARLIER),
 #elif GERMAN
-        .alphabeticalOrder = 8,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FOREVER),
 #endif
         .enabled = TRUE,
     },
@@ -203,9 +203,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Tuesday,
 #if ENGLISH
-        .alphabeticalOrder = 10,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_END),
 #elif GERMAN
-        .alphabeticalOrder = 39,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ALMOST),
 #endif
         .enabled = TRUE,
     },
@@ -213,9 +213,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Yesterday,
 #if ENGLISH
-        .alphabeticalOrder = 0,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FALL),
 #elif GERMAN
-        .alphabeticalOrder = 14,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FRIDAY),
 #endif
         .enabled = TRUE,
     },
@@ -223,9 +223,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Today,
 #if ENGLISH
-        .alphabeticalOrder = 27,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FINAL),
 #elif GERMAN
-        .alphabeticalOrder = 17,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_EARLIER),
 #endif
         .enabled = TRUE,
     },
@@ -233,9 +233,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Friday,
 #if ENGLISH
-        .alphabeticalOrder = 20,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FINISH),
 #elif GERMAN
-        .alphabeticalOrder = 34,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SPRING),
 #endif
         .enabled = TRUE,
     },
@@ -243,9 +243,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Monday,
 #if ENGLISH
-        .alphabeticalOrder = 8,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FOREVER),
 #elif GERMAN
-        .alphabeticalOrder = 12,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_YESTERDAY),
 #endif
         .enabled = TRUE,
     },
@@ -253,9 +253,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Later,
 #if ENGLISH
-        .alphabeticalOrder = 14,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FRIDAY),
 #elif GERMAN
-        .alphabeticalOrder = 0,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FALL),
 #endif
         .enabled = TRUE,
     },
@@ -263,9 +263,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Earlier,
 #if ENGLISH
-        .alphabeticalOrder = 3,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LAST),
 #elif GERMAN
-        .alphabeticalOrder = 13,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TODAY),
 #endif
         .enabled = TRUE,
     },
@@ -273,9 +273,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Another,
 #if ENGLISH
-        .alphabeticalOrder = 16,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LATER),
 #elif GERMAN
-        .alphabeticalOrder = 6,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ALWAYS),
 #endif
         .enabled = TRUE,
     },
@@ -283,9 +283,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Time,
 #if ENGLISH
-        .alphabeticalOrder = 15,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MONDAY),
 #elif GERMAN
-        .alphabeticalOrder = 5,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SOMETIME),
 #endif
         .enabled = TRUE,
     },
@@ -293,9 +293,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Finish,
 #if ENGLISH
-        .alphabeticalOrder = 24,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MONTH),
 #elif GERMAN
-        .alphabeticalOrder = 26,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NOW),
 #endif
         .enabled = TRUE,
     },
@@ -303,9 +303,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Wednesday,
 #if ENGLISH
-        .alphabeticalOrder = 1,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MORNING),
 #elif GERMAN
-        .alphabeticalOrder = 3,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LAST),
 #endif
         .enabled = TRUE,
     },
@@ -313,9 +313,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Soon,
 #if ENGLISH
-        .alphabeticalOrder = 40,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NEARLY),
 #elif GERMAN
-        .alphabeticalOrder = 27,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FINAL),
 #endif
         .enabled = TRUE,
     },
@@ -323,9 +323,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Start,
 #if ENGLISH
-        .alphabeticalOrder = 28,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NEXT),
 #elif GERMAN
-        .alphabeticalOrder = 21,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WEDNESDAY),
 #endif
         .enabled = TRUE,
     },
@@ -333,9 +333,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Month,
 #if ENGLISH
-        .alphabeticalOrder = 43,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NIGHT),
 #elif GERMAN
-        .alphabeticalOrder = 7,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CURRENT),
 #endif
         .enabled = TRUE,
     },
@@ -343,9 +343,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Stop,
 #if ENGLISH
-        .alphabeticalOrder = 42,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NIGHTTIME),
 #elif GERMAN
-        .alphabeticalOrder = 24,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MONTH),
 #endif
         .enabled = TRUE,
     },
@@ -353,9 +353,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Now,
 #if ENGLISH
-        .alphabeticalOrder = 26,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NOW),
 #elif GERMAN
-        .alphabeticalOrder = 15,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MONDAY),
 #endif
         .enabled = TRUE,
     },
@@ -363,9 +363,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Final,
 #if ENGLISH
-        .alphabeticalOrder = 38,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OLDEN),
 #elif GERMAN
-        .alphabeticalOrder = 1,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MORNING),
 #endif
         .enabled = TRUE,
     },
@@ -373,9 +373,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Next,
 #if ENGLISH
-        .alphabeticalOrder = 30,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SATURDAY),
 #elif GERMAN
-        .alphabeticalOrder = 28,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NEXT),
 #endif
         .enabled = TRUE,
     },
@@ -383,9 +383,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Age,
 #if ENGLISH
-        .alphabeticalOrder = 5,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SOMETIME),
 #elif GERMAN
-        .alphabeticalOrder = 43,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NIGHT),
 #endif
         .enabled = TRUE,
     },
@@ -393,9 +393,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Saturday,
 #if ENGLISH
-        .alphabeticalOrder = 22,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SOON),
 #elif GERMAN
-        .alphabeticalOrder = 30,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SATURDAY),
 #endif
         .enabled = TRUE,
     },
@@ -403,9 +403,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Summer,
 #if ENGLISH
-        .alphabeticalOrder = 34,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SPRING),
 #elif GERMAN
-        .alphabeticalOrder = 20,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FINISH),
 #endif
         .enabled = TRUE,
     },
@@ -413,9 +413,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Sunday,
 #if ENGLISH
-        .alphabeticalOrder = 23,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_START),
 #elif GERMAN
-        .alphabeticalOrder = 31,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SUMMER),
 #endif
         .enabled = TRUE,
     },
@@ -423,9 +423,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Beginning,
 #if ENGLISH
-        .alphabeticalOrder = 25,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_STOP),
 #elif GERMAN
-        .alphabeticalOrder = 32,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SUNDAY),
 #endif
         .enabled = TRUE,
     },
@@ -433,9 +433,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Spring,
 #if ENGLISH
-        .alphabeticalOrder = 31,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SUMMER),
 #elif GERMAN
-        .alphabeticalOrder = 16,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LATER),
 #endif
         .enabled = TRUE,
     },
@@ -443,9 +443,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Daytime,
 #if ENGLISH
-        .alphabeticalOrder = 32,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SUNDAY),
 #elif GERMAN
-        .alphabeticalOrder = 23,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_START),
 #endif
         .enabled = TRUE,
     },
@@ -453,9 +453,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Winter,
 #if ENGLISH
-        .alphabeticalOrder = 41,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_THURSDAY),
 #elif GERMAN
-        .alphabeticalOrder = 25,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_STOP),
 #endif
         .enabled = TRUE,
     },
@@ -463,9 +463,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Daily,
 #if ENGLISH
-        .alphabeticalOrder = 19,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TIME),
 #elif GERMAN
-        .alphabeticalOrder = 4,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DAY),
 #endif
         .enabled = TRUE,
     },
@@ -473,9 +473,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Olden,
 #if ENGLISH
-        .alphabeticalOrder = 13,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TODAY),
 #elif GERMAN
-        .alphabeticalOrder = 9,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DAYS),
 #endif
         .enabled = TRUE,
     },
@@ -483,9 +483,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Almost,
 #if ENGLISH
-        .alphabeticalOrder = 2,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TOMORROW),
 #elif GERMAN
-        .alphabeticalOrder = 35,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DAYTIME),
 #endif
         .enabled = TRUE,
     },
@@ -493,9 +493,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Nearly,
 #if ENGLISH
-        .alphabeticalOrder = 11,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TUESDAY),
 #elif GERMAN
-        .alphabeticalOrder = 37,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DAILY),
 #endif
         .enabled = TRUE,
     },
@@ -503,9 +503,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Thursday,
 #if ENGLISH
-        .alphabeticalOrder = 21,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WEDNESDAY),
 #elif GERMAN
-        .alphabeticalOrder = 2,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TOMORROW),
 #endif
         .enabled = TRUE,
     },
@@ -513,9 +513,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Nighttime,
 #if ENGLISH
-        .alphabeticalOrder = 44,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WEEK),
 #elif GERMAN
-        .alphabeticalOrder = 36,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WINTER),
 #endif
         .enabled = TRUE,
     },
@@ -523,9 +523,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Night,
 #if ENGLISH
-        .alphabeticalOrder = 36,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WINTER),
 #elif GERMAN
-        .alphabeticalOrder = 44,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WEEK),
 #endif
         .enabled = TRUE,
     },
@@ -533,9 +533,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Time[] = {
     {
         .text = gEasyChatWord_Week,
 #if ENGLISH
-        .alphabeticalOrder = 12,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_YESTERDAY),
 #elif GERMAN
-        .alphabeticalOrder = 19,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TIME),
 #endif
         .enabled = TRUE,
     },

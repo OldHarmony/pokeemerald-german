@@ -8,6 +8,7 @@
 
 #define IWRAM_DATA __attribute__((section("iwram_data")))
 #define EWRAM_DATA __attribute__((section("ewram_data")))
+#define COMMON_DATA __attribute__((section("common_data")))
 #define UNUSED __attribute__((unused))
 
 #if MODERN
@@ -23,9 +24,11 @@
 #define INTR_VECTOR    (*(void **)0x3007FFC)
 
 #define EWRAM_START 0x02000000
-#define EWRAM_END   (EWRAM_START + 0x40000)
+#define EWRAM_SIZE  0x40000
+#define EWRAM_END   (EWRAM_START + EWRAM_SIZE)
 #define IWRAM_START 0x03000000
-#define IWRAM_END   (IWRAM_START + 0x8000)
+#define IWRAM_SIZE  0x8000
+#define IWRAM_END   (IWRAM_START + IWRAM_SIZE)
 
 #define PLTT          0x5000000
 #define BG_PLTT       PLTT
@@ -60,6 +63,8 @@
 #define OAM      0x7000000
 #define OAM_SIZE 0x400
 
+#define ROM_START 0x08000000
+#define ROM_SIZE  0x2000000
 #define ROM_HEADER_SIZE   0xC0
 
 // Dimensions of a tile in pixels
@@ -75,7 +80,7 @@
 #define DISPLAY_TILE_HEIGHT (DISPLAY_HEIGHT / TILE_HEIGHT)
 
 // Size of different tile formats in bytes
-#define TILE_SIZE(bpp)((bpp) * TILE_WIDTH * TILE_HEIGHT / 8)
+#define TILE_SIZE(bpp) ((bpp) * TILE_WIDTH * TILE_HEIGHT / 8)
 #define TILE_SIZE_1BPP TILE_SIZE(1) // 8
 #define TILE_SIZE_4BPP TILE_SIZE(4) // 32
 #define TILE_SIZE_8BPP TILE_SIZE(8) // 64

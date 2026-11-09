@@ -1,203 +1,203 @@
 #ifndef GUARD_DATA_BARD_MUSIC_STATUS_H
 #define GUARD_DATA_BARD_MUSIC_STATUS_H
-const struct BardSound gBardSounds_Status[][6] = {
-    {
+static const struct BardSoundTemplate sBardSoundTemplates_Status[][MAX_BARD_SOUNDS_PER_WORD] = {
+    [EC_INDEX(EC_WORD_DARK)] = {
 #if ENGLISH
-        { .songLengthId = 8 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_STENCH)] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_THICK_FAT)] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_RAIN_DISH)] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_DRIZZLE)] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_ARENA_TRAP)] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 12 },
-        { .songLengthId = 6 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_INTIMIDATE)] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 17 },
-        { .songLengthId = 44 },
-        { .songLengthId =  3 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_ROCK_HEAD)] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_COLOR)] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_ALT_COLOR)] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 50 },
-        { .songLengthId =  1 },
-        { .songLengthId = 44 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_HELD) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_ROCK)] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_BEAUTIFUL)] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 12 },
-        { .songLengthId = 36 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -205,84 +205,84 @@ const struct BardSound gBardSounds_Status[][6] = {
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_BEAUTY)] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_AIR_LOCK)] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_PSYCHIC)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_HYPER_CUTTER)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 48 },
-        { .songLengthId = 44 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_FIGHTING)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -290,33 +290,33 @@ const struct BardSound gBardSounds_Status[][6] = {
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SHADOW_TAG)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SMART)] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 50 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -324,339 +324,339 @@ const struct BardSound gBardSounds_Status[][6] = {
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SMARTNESS)] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 50 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SPEED_BOOST)] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_COOL)] = {
 #if ENGLISH
-        { .songLengthId = 41 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_COOLNESS)] = {
 #if ENGLISH
-        { .songLengthId = 41 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_BATTLE_ARMOR)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 6 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_CUTE)] = {
 #if ENGLISH
-        { .songLengthId = 45 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_CUTENESS)] = {
 #if ENGLISH
-        { .songLengthId = 45 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_STURDY)] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SUCTION_CUPS)] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 15 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_GRASS)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_CLEAR_BODY)] = {
 #if ENGLISH
-        { .songLengthId = 14 },
-        { .songLengthId = 23 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        { .songId = PHONEME_ID(PH_LOT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_TORRENT)] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_GHOST)] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_ICE)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_GUTS)] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_ROUGH_SKIN)] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SHELL_ARMOR)] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 6 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_NATURAL_CURE)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 50 },
-        { .songLengthId = 8 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_DAMP)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_GROUND)] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -664,203 +664,203 @@ const struct BardSound gBardSounds_Status[][6] = {
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_LIMBER)] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_MAGNET_PULL)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_WHITE_SMOKE)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SYNCHRONIZE)] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_OVERGROW)] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 48 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SWIFT_SWIM)] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SAND_STREAM)] = {
 #if ENGLISH
-        { .songLengthId =  2 },
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SAND_VEIL)] = {
 #if ENGLISH
-        { .songLengthId =  2 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_SOLO) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_KEEN_EYE)] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_INNER_FOCUS)] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 48 },
-        { .songLengthId = 24 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_STATIC)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_TYPE)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -868,16 +868,16 @@ const struct BardSound gBardSounds_Status[][6] = {
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_TOUGH)] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -885,152 +885,152 @@ const struct BardSound gBardSounds_Status[][6] = {
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_TOUGHNESS)] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 11 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SHED_SKIN)] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_HUGE_POWER)] = {
 #if ENGLISH
-        { .songLengthId = 45 },
-        { .songLengthId = 33 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_VOLT_ABSORB)] = {
 #if ENGLISH
-        { .songLengthId = 36 },
-        { .songLengthId = 44 },
-        { .songLengthId = 26 },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_WATER_ABSORB)] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 48 },
-        { .songLengthId = 44 },
-        { .songLengthId = 26 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_ELECTRIC)] = {
 #if ENGLISH
-        { .songLengthId = 11 },
-        { .songLengthId = 9 },
-        { .songLengthId = 17 },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_FORECAST)] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId =  2 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SERENE_GRACE)] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 14 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_POISON)] = {
 #if ENGLISH
-        { .songLengthId = 32 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CHOICE_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1038,390 +1038,390 @@ const struct BardSound gBardSounds_Status[][6] = {
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_POISON_POINT)] = {
 #if ENGLISH
-        { .songLengthId = 32 },
-        { .songLengthId = 27 },
-        { .songLengthId = 30 },
+        { .songId = PHONEME_ID(PH_CHOICE_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_CHOICE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_DRAGON)] = {
 #if ENGLISH
-        { .songLengthId =  1 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_HELD) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_TRACE)] = {
 #if ENGLISH
-        { .songLengthId = 4 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_HELD) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_OBLIVIOUS)] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_TRUANT)] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_RUN_AWAY)] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 8 },
-        { .songLengthId = 5 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
+        { .songId = PHONEME_ID(PH_FACE_SOLO) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_STICKY_HOLD)] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_CLOUD_NINE)] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_NORMAL)] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_STEEL)] = {
 #if ENGLISH
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_ILLUMINATE)] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId =  3 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_EARLY_BIRD)] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 12 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_HUSTLE)] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 38 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_SOLO) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SHINE)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_FLYING)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_DROUGHT)] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_LIGHTNINGROD)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 17 },
-        { .songLengthId = 21 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_COMPOUNDEYES)] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 33 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_MARVEL_SCALE)] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 36 },
-        { .songLengthId = 5 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_SOLO) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_WONDER_GUARD)] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 48 },
-        { .songLengthId = 6 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_INSOMNIA)] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 21 },
-        { .songLengthId = 12 },
-        { .songLengthId = 6 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_LEVITATE)] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId =  3 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_PLUS)] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1429,427 +1429,427 @@ const struct BardSound gBardSounds_Status[][6] = {
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_PRESSURE)] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_LIQUID_OOZE)] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_COLOR_CHANGE)] = {
 #if ENGLISH
-        { .songLengthId = 23 },
-        { .songLengthId = 48 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SOUNDPROOF)] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_EFFECT_SPORE)] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 9 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_PKRS)] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_FIRE)] = {
 #if ENGLISH
-        { .songLengthId = 20 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_FLAME_BODY)] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 21 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_MINUS)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_OWN_TEMPO)] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_MAGMA_ARMOR)] = {
 #if ENGLISH
-        { .songLengthId =  1 },
-        { .songLengthId = 44 },
-        { .songLengthId = 27 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_TRAP_HELD) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_WATER)] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_WATER_VEIL)] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 48 },
-        { .songLengthId = 4 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_HELD) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_BUG)] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SWARM)] = {
 #if ENGLISH
-        { .songLengthId =  7 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_HELD) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_CUTE_CHARM)] = {
 #if ENGLISH
-        { .songLengthId = 45 },
-        { .songLengthId =  7 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_HELD) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_IMMUNITY)] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 39 },
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_BLAZE)] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_PICKUP)] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_PATTERN)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_FLASH_FIRE)] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 20 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_VITAL_SPIRIT)] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 27 },
-        { .songLengthId = 48 },
-        { .songLengthId = 17 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_CHLOROPHYLL)] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 44 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_PURE_POWER)] = {
 #if ENGLISH
-        { .songLengthId = 45 },
-        { .songLengthId = 33 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
     },
-    {
+    [EC_INDEX(EC_WORD_SHIELD_DUST)] = {
 #if ENGLISH
-        { .songLengthId = 14 },
-        { .songLengthId = 43 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_HELD) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif

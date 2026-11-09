@@ -43,7 +43,7 @@ LilycoveCity_DepartmentStore_1F_Text_PleaseVisitAgain:
 LilycoveCity_DepartmentStore_1F_Text_PleasePickTicket:
 	.ifdef ENGLISH
 	.string "Please pick a LOTO TICKET.\n"
-	.string "…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "…{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}…{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}…{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Bitte, ziehe einen LOTTOSCHEIN.\n"

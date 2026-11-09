@@ -145,9 +145,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Will,
 #if ENGLISH
-        .alphabeticalOrder = 32,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_A),
 #elif GERMAN
-        .alphabeticalOrder = 58,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LIKE),
 #endif
         .enabled = TRUE,
     },
@@ -155,9 +155,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_WillBeHere,
 #if ENGLISH
-        .alphabeticalOrder = 39,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ABOUT),
 #elif GERMAN
-        .alphabeticalOrder = 42,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ALL),
 #endif
         .enabled = TRUE,
     },
@@ -165,9 +165,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Or,
 #if ENGLISH
-        .alphabeticalOrder = 63,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AFTER),
 #elif GERMAN
-        .alphabeticalOrder = 66,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_THAN),
 #endif
         .enabled = TRUE,
     },
@@ -175,9 +175,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Times,
 #if ENGLISH
-        .alphabeticalOrder = 42,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ALL),
 #elif GERMAN
-        .alphabeticalOrder = 44,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ON),
 #endif
         .enabled = TRUE,
     },
@@ -185,9 +185,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Wonder,
 #if ENGLISH
-        .alphabeticalOrder = 33,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AN),
 #elif GERMAN
-        .alphabeticalOrder = 14,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OTHER),
 #endif
         .enabled = TRUE,
     },
@@ -195,9 +195,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_IsItQues,
 #if ENGLISH
-        .alphabeticalOrder = 68,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ANYWHERE),
 #elif GERMAN
-        .alphabeticalOrder = 57,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TOO),
 #endif
         .enabled = TRUE,
     },
@@ -205,9 +205,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Be,
 #if ENGLISH
-        .alphabeticalOrder = 15,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ARE),
 #elif GERMAN
-        .alphabeticalOrder = 56,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OUT),
 #endif
         .enabled = TRUE,
     },
@@ -215,25 +215,25 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Gimme,
 #if ENGLISH
-        .alphabeticalOrder = 46,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AS),
 #elif GERMAN
-        .alphabeticalOrder = 45,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OFF),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_COULD)] =
     {
         .text = gEasyChatWord_Could,
-        .alphabeticalOrder = 54,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AT),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_LIKELY_TO)] =
     {
         .text = gEasyChatWord_LikelyTo,
 #if ENGLISH
-        .alphabeticalOrder = 6,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BE),
 #elif GERMAN
-        .alphabeticalOrder = 49,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BETTER),
 #endif
         .enabled = TRUE,
     },
@@ -241,9 +241,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Would,
 #if ENGLISH
-        .alphabeticalOrder = 64,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BEFORE),
 #elif GERMAN
-        .alphabeticalOrder = 15,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ARE),
 #endif
         .enabled = TRUE,
     },
@@ -251,9 +251,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Is,
 #if ENGLISH
-        .alphabeticalOrder = 53,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BELONGS_TO),
 #elif GERMAN
-        .alphabeticalOrder = 35,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_THERE),
 #endif
         .enabled = TRUE,
     },
@@ -261,9 +261,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_IsntItQues,
 #if ENGLISH
-        .alphabeticalOrder = 49,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BETTER),
 #elif GERMAN
-        .alphabeticalOrder = 32,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_A),
 #endif
         .enabled = TRUE,
     },
@@ -271,9 +271,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Lets,
 #if ENGLISH
-        .alphabeticalOrder = 22,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CAN),
 #elif GERMAN
-        .alphabeticalOrder = 33,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AN),
 #endif
         .enabled = TRUE,
     },
@@ -281,9 +281,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Other,
 #if ENGLISH
-        .alphabeticalOrder = 21,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CAN_T),
 #elif GERMAN
-        .alphabeticalOrder = 52,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OF),
 #endif
         .enabled = TRUE,
     },
@@ -291,9 +291,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Are,
 #if ENGLISH
-        .alphabeticalOrder = 8,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COULD),
 #elif GERMAN
-        .alphabeticalOrder = 67,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ONCE),
 #endif
         .enabled = TRUE,
     },
@@ -301,9 +301,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Was,
 #if ENGLISH
-        .alphabeticalOrder = 59,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DID),
 #elif GERMAN
-        .alphabeticalOrder = 41,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IT),
 #endif
         .enabled = TRUE,
     },
@@ -311,9 +311,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Were,
 #if ENGLISH
-        .alphabeticalOrder = 60,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DIDN_T),
 #elif GERMAN
-        .alphabeticalOrder = 5,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IS_IT_QUES),
 #endif
         .enabled = TRUE,
     },
@@ -321,9 +321,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Those,
 #if ENGLISH
-        .alphabeticalOrder = 24,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DO),
 #elif GERMAN
-        .alphabeticalOrder = 43,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FOR),
 #endif
         .enabled = TRUE,
     },
@@ -331,9 +331,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Isnt,
 #if ENGLISH
-        .alphabeticalOrder = 25,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DOES),
 #elif GERMAN
-        .alphabeticalOrder = 53,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BELONGS_TO),
 #endif
         .enabled = TRUE,
     },
@@ -341,9 +341,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Wont,
 #if ENGLISH
-        .alphabeticalOrder = 61,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DOESN_T),
 #elif GERMAN
-        .alphabeticalOrder = 46,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AS),
 #endif
         .enabled = TRUE,
     },
@@ -351,9 +351,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Cant,
 #if ENGLISH
-        .alphabeticalOrder = 23,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DON_T),
 #elif GERMAN
-        .alphabeticalOrder = 59,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DID),
 #endif
         .enabled = TRUE,
     },
@@ -361,9 +361,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Can,
 #if ENGLISH
-        .alphabeticalOrder = 50,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_EVER),
 #elif GERMAN
-        .alphabeticalOrder = 7,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_GIMME),
 #endif
         .enabled = TRUE,
     },
@@ -371,9 +371,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Dont,
 #if ENGLISH
-        .alphabeticalOrder = 43,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FOR),
 #elif GERMAN
-        .alphabeticalOrder = 30,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HAVE),
 #endif
         .enabled = TRUE,
     },
@@ -381,9 +381,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Do,
 #if ENGLISH
-        .alphabeticalOrder = 7,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_GIMME),
 #elif GERMAN
-        .alphabeticalOrder = 31,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HAVEN_T),
 #endif
         .enabled = TRUE,
     },
@@ -391,9 +391,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Does,
 #if ENGLISH
-        .alphabeticalOrder = 30,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HAVE),
 #elif GERMAN
-        .alphabeticalOrder = 55,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IN),
 #endif
         .enabled = TRUE,
     },
@@ -401,9 +401,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Whom,
 #if ENGLISH
-        .alphabeticalOrder = 31,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HAVEN_T),
 #elif GERMAN
-        .alphabeticalOrder = 68,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ANYWHERE),
 #endif
         .enabled = TRUE,
     },
@@ -411,9 +411,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Which,
 #if ENGLISH
-        .alphabeticalOrder = 55,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IN),
 #elif GERMAN
-        .alphabeticalOrder = 11,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IS),
 #endif
         .enabled = TRUE,
     },
@@ -421,9 +421,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Wasnt,
 #if ENGLISH
-        .alphabeticalOrder = 11,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IS),
 #elif GERMAN
-        .alphabeticalOrder = 19,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ISN_T),
 #endif
         .enabled = TRUE,
     },
@@ -431,9 +431,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Werent,
 #if ENGLISH
-        .alphabeticalOrder = 5,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IS_IT_QUES),
 #elif GERMAN
-        .alphabeticalOrder = 50,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_EVER),
 #endif
         .enabled = TRUE,
     },
@@ -441,9 +441,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Have,
 #if ENGLISH
-        .alphabeticalOrder = 19,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ISN_T),
 #elif GERMAN
-        .alphabeticalOrder = 21,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CAN_T),
 #endif
         .enabled = TRUE,
     },
@@ -451,9 +451,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Havent,
 #if ENGLISH
-        .alphabeticalOrder = 12,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ISN_T_IT_QUES),
 #elif GERMAN
-        .alphabeticalOrder = 22,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CAN),
 #endif
         .enabled = TRUE,
     },
@@ -461,25 +461,25 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_A,
 #if ENGLISH
-        .alphabeticalOrder = 41,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IT),
 #elif GERMAN
-        .alphabeticalOrder = 8,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COULD),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_AN)] =
     {
         .text = gEasyChatWord_An,
-        .alphabeticalOrder = 13,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LET_S),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_NOT)] =
     {
         .text = gEasyChatWord_Not,
 #if ENGLISH
-        .alphabeticalOrder = 58,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LIKE),
 #elif GERMAN
-        .alphabeticalOrder = 24,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DO),
 #endif
         .enabled = TRUE,
     },
@@ -487,9 +487,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_There,
 #if ENGLISH
-        .alphabeticalOrder = 9,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LIKELY_TO),
 #elif GERMAN
-        .alphabeticalOrder = 61,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DOESN_T),
 #endif
         .enabled = TRUE,
     },
@@ -497,9 +497,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_OkQues,
 #if ENGLISH
-        .alphabeticalOrder = 38,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MAYBE),
 #elif GERMAN
-        .alphabeticalOrder = 48,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WITH),
 #endif
         .enabled = TRUE,
     },
@@ -507,9 +507,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_So,
 #if ENGLISH
-        .alphabeticalOrder = 34,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NOT),
 #elif GERMAN
-        .alphabeticalOrder = 63,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AFTER),
 #endif
         .enabled = TRUE,
     },
@@ -517,9 +517,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Maybe,
 #if ENGLISH
-        .alphabeticalOrder = 52,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OF),
 #elif GERMAN
-        .alphabeticalOrder = 23,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DON_T),
 #endif
         .enabled = TRUE,
     },
@@ -527,9 +527,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_About,
 #if ENGLISH
-        .alphabeticalOrder = 45,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OFF),
 #elif GERMAN
-        .alphabeticalOrder = 60,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DIDN_T),
 #endif
         .enabled = TRUE,
     },
@@ -537,9 +537,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Over,
 #if ENGLISH
-        .alphabeticalOrder = 36,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OK_QUES),
 #elif GERMAN
-        .alphabeticalOrder = 34,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NOT),
 #endif
         .enabled = TRUE,
     },
@@ -547,9 +547,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_It,
 #if ENGLISH
-        .alphabeticalOrder = 44,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ON),
 #elif GERMAN
-        .alphabeticalOrder = 12,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ISN_T_IT_QUES),
 #endif
         .enabled = TRUE,
     },
@@ -557,25 +557,25 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_All,
 #if ENGLISH
-        .alphabeticalOrder = 67,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ONCE),
 #elif GERMAN
-        .alphabeticalOrder = 36,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OK_QUES),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_FOR)] =
     {
         .text = gEasyChatWord_For,
-        .alphabeticalOrder = 2,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OR),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_ON)] =
     {
         .text = gEasyChatWord_On,
 #if ENGLISH
-        .alphabeticalOrder = 14,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OTHER),
 #elif GERMAN
-        .alphabeticalOrder = 62,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WITHOUT),
 #endif
         .enabled = TRUE,
     },
@@ -583,9 +583,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Off,
 #if ENGLISH
-        .alphabeticalOrder = 56,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OUT),
 #elif GERMAN
-        .alphabeticalOrder = 6,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BE),
 #endif
         .enabled = TRUE,
     },
@@ -593,9 +593,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_As,
 #if ENGLISH
-        .alphabeticalOrder = 40,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OVER),
 #elif GERMAN
-        .alphabeticalOrder = 51,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SINCE),
 #endif
         .enabled = TRUE,
     },
@@ -603,25 +603,25 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_To,
 #if ENGLISH
-        .alphabeticalOrder = 51,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SINCE),
 #elif GERMAN
-        .alphabeticalOrder = 18,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_THOSE),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_WITH)] =
     {
         .text = gEasyChatWord_With,
-        .alphabeticalOrder = 37,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SO),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_BETTER)] =
     {
         .text = gEasyChatWord_Better,
 #if ENGLISH
-        .alphabeticalOrder = 66,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_THAN),
 #elif GERMAN
-        .alphabeticalOrder = 29,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WEREN_T),
 #endif
         .enabled = TRUE,
     },
@@ -629,9 +629,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Ever,
 #if ENGLISH
-        .alphabeticalOrder = 35,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_THERE),
 #elif GERMAN
-        .alphabeticalOrder = 25,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DOES),
 #endif
         .enabled = TRUE,
     },
@@ -639,9 +639,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Since,
 #if ENGLISH
-        .alphabeticalOrder = 18,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_THOSE),
 #elif GERMAN
-        .alphabeticalOrder = 40,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OVER),
 #endif
         .enabled = TRUE,
     },
@@ -649,9 +649,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Of,
 #if ENGLISH
-        .alphabeticalOrder = 3,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TIMES),
 #elif GERMAN
-        .alphabeticalOrder = 39,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ABOUT),
 #endif
         .enabled = TRUE,
     },
@@ -659,9 +659,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_BelongsTo,
 #if ENGLISH
-        .alphabeticalOrder = 47,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TO),
 #elif GERMAN
-        .alphabeticalOrder = 9,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LIKELY_TO),
 #endif
         .enabled = TRUE,
     },
@@ -669,9 +669,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_At,
 #if ENGLISH
-        .alphabeticalOrder = 57,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TOO),
 #elif GERMAN
-        .alphabeticalOrder = 38,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MAYBE),
 #endif
         .enabled = TRUE,
     },
@@ -679,9 +679,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_In,
 #if ENGLISH
-        .alphabeticalOrder = 16,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WAS),
 #elif GERMAN
-        .alphabeticalOrder = 64,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BEFORE),
 #endif
         .enabled = TRUE,
     },
@@ -689,9 +689,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Out,
 #if ENGLISH
-        .alphabeticalOrder = 28,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WASN_T),
 #elif GERMAN
-        .alphabeticalOrder = 65,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WHILE),
 #endif
         .enabled = TRUE,
     },
@@ -699,9 +699,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Too,
 #if ENGLISH
-        .alphabeticalOrder = 17,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WERE),
 #elif GERMAN
-        .alphabeticalOrder = 16,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WAS),
 #endif
         .enabled = TRUE,
     },
@@ -709,25 +709,25 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Like,
 #if ENGLISH
-        .alphabeticalOrder = 29,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WEREN_T),
 #elif GERMAN
-        .alphabeticalOrder = 28,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WASN_T),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_DID)] =
     {
         .text = gEasyChatWord_Did,
-        .alphabeticalOrder = 27,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WHICH),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_DIDN_T)] =
     {
         .text = gEasyChatWord_Didnt,
 #if ENGLISH
-        .alphabeticalOrder = 65,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WHILE),
 #elif GERMAN
-        .alphabeticalOrder = 26,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WHOM),
 #endif
         .enabled = TRUE,
     },
@@ -735,31 +735,31 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Doesnt,
 #if ENGLISH
-        .alphabeticalOrder = 26,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WHOM),
 #elif GERMAN
-        .alphabeticalOrder = 20,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WON_T),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_WITHOUT)] =
     {
         .text = gEasyChatWord_Without,
-        .alphabeticalOrder = 0,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WILL),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_AFTER)] =
     {
         .text = gEasyChatWord_After,
-        .alphabeticalOrder = 1,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WILL_BE_HERE),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_BEFORE)] =
     {
         .text = gEasyChatWord_Before,
 #if ENGLISH
-        .alphabeticalOrder = 48,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WITH),
 #elif GERMAN
-        .alphabeticalOrder = 4,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WONDER),
 #endif
         .enabled = TRUE,
     },
@@ -767,9 +767,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_While,
 #if ENGLISH
-        .alphabeticalOrder = 62,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WITHOUT),
 #elif GERMAN
-        .alphabeticalOrder = 10,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WOULD),
 #endif
         .enabled = TRUE,
     },
@@ -777,9 +777,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Than,
 #if ENGLISH
-        .alphabeticalOrder = 20,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WON_T),
 #elif GERMAN
-        .alphabeticalOrder = 17,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WERE),
 #endif
         .enabled = TRUE,
     },
@@ -787,9 +787,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Once,
 #if ENGLISH
-        .alphabeticalOrder = 4,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WONDER),
 #elif GERMAN
-        .alphabeticalOrder = 3,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TIMES),
 #endif
         .enabled = TRUE,
     },
@@ -797,9 +797,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Endings[] = {
     {
         .text = gEasyChatWord_Anywhere,
 #if ENGLISH
-        .alphabeticalOrder = 10,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WOULD),
 #elif GERMAN
-        .alphabeticalOrder = 47,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TO),
 #endif
         .enabled = TRUE,
     },

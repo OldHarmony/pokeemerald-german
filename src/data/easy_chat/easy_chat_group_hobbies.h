@@ -114,16 +114,16 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     [EC_INDEX(EC_WORD_IDOL)] =
     {
         .text = gEasyChatWord_Idol,
-        .alphabeticalOrder = 43,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ADVENTURE),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_ANIME)] =
     {
         .text = gEasyChatWord_Anime,
 #if ENGLISH
-        .alphabeticalOrder = 1,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ANIME),
 #elif GERMAN
-        .alphabeticalOrder = 32,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FISHING),
 #endif
         .enabled = TRUE,
     },
@@ -131,9 +131,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Song,
 #if ENGLISH
-        .alphabeticalOrder = 45,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BALL),
 #elif GERMAN
-        .alphabeticalOrder = 1,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_ANIME),
 #endif
         .enabled = TRUE,
     },
@@ -141,9 +141,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Movie,
 #if ENGLISH
-        .alphabeticalOrder = 21,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BIKE),
 #elif GERMAN
-        .alphabeticalOrder = 53,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LOOK),
 #endif
         .enabled = TRUE,
     },
@@ -151,9 +151,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Sweets,
 #if ENGLISH
-        .alphabeticalOrder = 44,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BOARD),
 #elif GERMAN
-        .alphabeticalOrder = 45,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BALL),
 #endif
         .enabled = TRUE,
     },
@@ -161,9 +161,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Chat,
 #if ENGLISH
-        .alphabeticalOrder = 46,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BOOK),
 #elif GERMAN
-        .alphabeticalOrder = 12,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_VIEWING),
 #endif
         .enabled = TRUE,
     },
@@ -171,9 +171,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_ChildsPlay,
 #if ENGLISH
-        .alphabeticalOrder = 11,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CAMERA),
 #elif GERMAN
-        .alphabeticalOrder = 38,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FLOWERS),
 #endif
         .enabled = TRUE,
     },
@@ -181,9 +181,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Toys,
 #if ENGLISH
-        .alphabeticalOrder = 9,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CARDS),
 #elif GERMAN
-        .alphabeticalOrder = 44,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BOARD),
 #endif
         .enabled = TRUE,
     },
@@ -191,9 +191,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Music,
 #if ENGLISH
-        .alphabeticalOrder = 30,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CHANNEL),
 #elif GERMAN
-        .alphabeticalOrder = 46,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BOOK),
 #endif
         .enabled = TRUE,
     },
@@ -201,9 +201,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Cards,
 #if ENGLISH
-        .alphabeticalOrder = 5,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CHAT),
 #elif GERMAN
-        .alphabeticalOrder = 48,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COMICS),
 #endif
         .enabled = TRUE,
     },
@@ -211,9 +211,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Shopping,
 #if ENGLISH
-        .alphabeticalOrder = 6,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CHILD_S_PLAY),
 #elif GERMAN
-        .alphabeticalOrder = 34,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DESIGN),
 #endif
         .enabled = TRUE,
     },
@@ -221,9 +221,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Camera,
 #if ENGLISH
-        .alphabeticalOrder = 17,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COLLECTION),
 #elif GERMAN
-        .alphabeticalOrder = 10,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SHOPPING),
 #endif
         .enabled = TRUE,
     },
@@ -231,9 +231,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Viewing,
 #if ENGLISH
-        .alphabeticalOrder = 48,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COMICS),
 #elif GERMAN
-        .alphabeticalOrder = 50,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_PLANS),
 #endif
         .enabled = TRUE,
     },
@@ -241,9 +241,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Spectator,
 #if ENGLISH
-        .alphabeticalOrder = 18,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COMPLETE),
 #elif GERMAN
-        .alphabeticalOrder = 21,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BIKE),
 #endif
         .enabled = TRUE,
     },
@@ -251,9 +251,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Gourmet,
 #if ENGLISH
-        .alphabeticalOrder = 29,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DANCE),
 #elif GERMAN
-        .alphabeticalOrder = 49,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HOLIDAY),
 #endif
         .enabled = TRUE,
     },
@@ -261,9 +261,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Game,
 #if ENGLISH
-        .alphabeticalOrder = 33,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DATE),
 #elif GERMAN
-        .alphabeticalOrder = 47,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FESTIVAL),
 #endif
         .enabled = TRUE,
     },
@@ -271,9 +271,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Rpg,
 #if ENGLISH
-        .alphabeticalOrder = 34,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DESIGN),
 #elif GERMAN
-        .alphabeticalOrder = 3,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MOVIE),
 #endif
         .enabled = TRUE,
     },
@@ -281,9 +281,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Collection,
 #if ENGLISH
-        .alphabeticalOrder = 26,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DIET),
 #elif GERMAN
-        .alphabeticalOrder = 11,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CAMERA),
 #endif
         .enabled = TRUE,
     },
@@ -291,9 +291,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Complete,
 #if ENGLISH
-        .alphabeticalOrder = 42,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FASHION),
 #elif GERMAN
-        .alphabeticalOrder = 14,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_GOURMET),
 #endif
         .enabled = TRUE,
     },
@@ -301,9 +301,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Magazine,
 #if ENGLISH
-        .alphabeticalOrder = 47,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FESTIVAL),
 #elif GERMAN
-        .alphabeticalOrder = 39,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HERO),
 #endif
         .enabled = TRUE,
     },
@@ -311,9 +311,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Walk,
 #if ENGLISH
-        .alphabeticalOrder = 32,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FISHING),
 #elif GERMAN
-        .alphabeticalOrder = 41,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HEROINE),
 #endif
         .enabled = TRUE,
     },
@@ -321,9 +321,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Bike,
 #if ENGLISH
-        .alphabeticalOrder = 38,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FLOWERS),
 #elif GERMAN
-        .alphabeticalOrder = 31,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MAKING),
 #endif
         .enabled = TRUE,
     },
@@ -331,9 +331,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Hobby,
 #if ENGLISH
-        .alphabeticalOrder = 15,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_GAME),
 #elif GERMAN
-        .alphabeticalOrder = 22,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HOBBY),
 #endif
         .enabled = TRUE,
     },
@@ -341,9 +341,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Sports,
 #if ENGLISH
-        .alphabeticalOrder = 14,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_GOURMET),
 #elif GERMAN
-        .alphabeticalOrder = 0,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IDOL),
 #endif
         .enabled = TRUE,
     },
@@ -351,9 +351,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Software,
 #if ENGLISH
-        .alphabeticalOrder = 39,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HERO),
 #elif GERMAN
-        .alphabeticalOrder = 9,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CARDS),
 #endif
         .enabled = TRUE,
     },
@@ -361,9 +361,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Songs,
 #if ENGLISH
-        .alphabeticalOrder = 41,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HEROINE),
 #elif GERMAN
-        .alphabeticalOrder = 6,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CHILD_S_PLAY),
 #endif
         .enabled = TRUE,
     },
@@ -371,9 +371,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Diet,
 #if ENGLISH
-        .alphabeticalOrder = 22,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HOBBY),
 #elif GERMAN
-        .alphabeticalOrder = 18,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COMPLETE),
 #endif
         .enabled = TRUE,
     },
@@ -381,9 +381,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Treasure,
 #if ENGLISH
-        .alphabeticalOrder = 49,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HOLIDAY),
 #elif GERMAN
-        .alphabeticalOrder = 27,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TREASURE),
 #endif
         .enabled = TRUE,
     },
@@ -391,9 +391,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Travel,
 #if ENGLISH
-        .alphabeticalOrder = 0,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_IDOL),
 #elif GERMAN
-        .alphabeticalOrder = 35,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LOCOMOTIVE),
 #endif
         .enabled = TRUE,
     },
@@ -401,9 +401,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Dance,
 #if ENGLISH
-        .alphabeticalOrder = 35,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LOCOMOTIVE),
 #elif GERMAN
-        .alphabeticalOrder = 19,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MAGAZINE),
 #endif
         .enabled = TRUE,
     },
@@ -411,9 +411,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Channel,
 #if ENGLISH
-        .alphabeticalOrder = 53,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LOOK),
 #elif GERMAN
-        .alphabeticalOrder = 42,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FASHION),
 #endif
         .enabled = TRUE,
     },
@@ -421,9 +421,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Making,
 #if ENGLISH
-        .alphabeticalOrder = 19,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MAGAZINE),
 #elif GERMAN
-        .alphabeticalOrder = 8,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MUSIC),
 #endif
         .enabled = TRUE,
     },
@@ -431,9 +431,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Fishing,
 #if ENGLISH
-        .alphabeticalOrder = 31,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MAKING),
 #elif GERMAN
-        .alphabeticalOrder = 26,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DIET),
 #endif
         .enabled = TRUE,
     },
@@ -441,9 +441,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Date,
 #if ENGLISH
-        .alphabeticalOrder = 3,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MOVIE),
 #elif GERMAN
-        .alphabeticalOrder = 4,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SWEETS),
 #endif
         .enabled = TRUE,
     },
@@ -451,9 +451,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Design,
 #if ENGLISH
-        .alphabeticalOrder = 8,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MUSIC),
 #elif GERMAN
-        .alphabeticalOrder = 40,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NAP),
 #endif
         .enabled = TRUE,
     },
@@ -461,9 +461,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Locomotive,
 #if ENGLISH
-        .alphabeticalOrder = 40,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NAP),
 #elif GERMAN
-        .alphabeticalOrder = 37,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_PC),
 #endif
         .enabled = TRUE,
     },
@@ -471,9 +471,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_PlushDoll,
 #if ENGLISH
-        .alphabeticalOrder = 37,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_PC),
 #elif GERMAN
-        .alphabeticalOrder = 5,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CHAT),
 #endif
         .enabled = TRUE,
     },
@@ -481,9 +481,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Pc,
 #if ENGLISH
-        .alphabeticalOrder = 50,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_PLANS),
 #elif GERMAN
-        .alphabeticalOrder = 36,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_PLUSH_DOLL),
 #endif
         .enabled = TRUE,
     },
@@ -491,25 +491,25 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Flowers,
 #if ENGLISH
-        .alphabeticalOrder = 36,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_PLUSH_DOLL),
 #elif GERMAN
-        .alphabeticalOrder = 28,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TRAVEL),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_HERO)] =
     {
         .text = gEasyChatWord_Hero,
-        .alphabeticalOrder = 16,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_RPG),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_NAP)] =
     {
         .text = gEasyChatWord_Nap,
 #if ENGLISH
-        .alphabeticalOrder = 10,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SHOPPING),
 #elif GERMAN
-        .alphabeticalOrder = 17,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COLLECTION),
 #endif
         .enabled = TRUE,
     },
@@ -517,9 +517,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Heroine,
 #if ENGLISH
-        .alphabeticalOrder = 24,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SOFTWARE),
 #elif GERMAN
-        .alphabeticalOrder = 51,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TRENDY),
 #endif
         .enabled = TRUE,
     },
@@ -527,9 +527,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Fashion,
 #if ENGLISH
-        .alphabeticalOrder = 2,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SONG),
 #elif GERMAN
-        .alphabeticalOrder = 24,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SOFTWARE),
 #endif
         .enabled = TRUE,
     },
@@ -537,9 +537,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Adventure,
 #if ENGLISH
-        .alphabeticalOrder = 25,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SONGS),
 #elif GERMAN
-        .alphabeticalOrder = 2,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SONG),
 #endif
         .enabled = TRUE,
     },
@@ -547,9 +547,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Board,
 #if ENGLISH
-        .alphabeticalOrder = 13,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SPECTATOR),
 #elif GERMAN
-        .alphabeticalOrder = 25,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SONGS),
 #endif
         .enabled = TRUE,
     },
@@ -557,9 +557,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Ball,
 #if ENGLISH
-        .alphabeticalOrder = 23,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SPORTS),
 #elif GERMAN
-        .alphabeticalOrder = 20,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WALK),
 #endif
         .enabled = TRUE,
     },
@@ -567,25 +567,25 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Book,
 #if ENGLISH
-        .alphabeticalOrder = 4,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SWEETS),
 #elif GERMAN
-        .alphabeticalOrder = 15,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_GAME),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_FESTIVAL)] =
     {
         .text = gEasyChatWord_Festival,
-        .alphabeticalOrder = 7,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TOYS),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_COMICS)] =
     {
         .text = gEasyChatWord_Comics,
 #if ENGLISH
-        .alphabeticalOrder = 28,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TRAVEL),
 #elif GERMAN
-        .alphabeticalOrder = 23,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SPORTS),
 #endif
         .enabled = TRUE,
     },
@@ -593,9 +593,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Holiday,
 #if ENGLISH
-        .alphabeticalOrder = 27,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TREASURE),
 #elif GERMAN
-        .alphabeticalOrder = 29,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DANCE),
 #endif
         .enabled = TRUE,
     },
@@ -603,9 +603,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Plans,
 #if ENGLISH
-        .alphabeticalOrder = 51,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_TRENDY),
 #elif GERMAN
-        .alphabeticalOrder = 52,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_VACATION),
 #endif
         .enabled = TRUE,
     },
@@ -613,9 +613,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Trendy,
 #if ENGLISH
-        .alphabeticalOrder = 52,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_VACATION),
 #elif GERMAN
-        .alphabeticalOrder = 33,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DATE),
 #endif
         .enabled = TRUE,
     },
@@ -623,9 +623,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Vacation,
 #if ENGLISH
-        .alphabeticalOrder = 12,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_VIEWING),
 #elif GERMAN
-        .alphabeticalOrder = 30,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CHANNEL),
 #endif
         .enabled = TRUE,
     },
@@ -633,9 +633,9 @@ const struct EasyChatWordInfo gEasyChatGroup_Hobbies[] = {
     {
         .text = gEasyChatWord_Look,
 #if ENGLISH
-        .alphabeticalOrder = 20,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WALK),
 #elif GERMAN
-        .alphabeticalOrder = 13,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SPECTATOR),
 #endif
         .enabled = TRUE,
     },

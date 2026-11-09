@@ -3,7 +3,7 @@
 
 const u16 gNumBardWords_Species = NUM_SPECIES;
 
-const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
+static const struct BardSoundTemplate sBardSoundTemplates_Pokemon[NUM_SPECIES][MAX_BARD_SOUNDS_PER_WORD] = {
     [SPECIES_NONE] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -14,14 +14,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BULBASAUR] = {
 #if ENGLISH
-        { .songLengthId = 36 },
-        { .songLengthId = 42 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -29,14 +29,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_IVYSAUR] = {
 #if ENGLISH
-        { .songLengthId = 20 },
-        { .songLengthId = 12 },
-        { .songLengthId = 50 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -44,14 +44,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VENUSAUR] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 44 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -59,14 +59,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CHARMANDER] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId =  2 },
-        { .songLengthId = 50 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -74,15 +74,15 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CHARMELEON] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 12 },
-        { .songLengthId = 12 },
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -90,14 +90,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CHARIZARD] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 17 },
-        { .songLengthId = 50 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -106,12 +106,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SQUIRTLE] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 36 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -120,13 +120,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WARTORTLE] = {
 #if ENGLISH
-        { .songLengthId = 8 },
-        { .songLengthId = 48 },
-        { .songLengthId = 36 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -135,12 +135,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BLASTOISE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 30 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_CHOICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -149,13 +149,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CATERPIE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 48 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId =  0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -163,12 +163,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_METAPOD] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
-        { .songLengthId = 21 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -177,12 +177,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BUTTERFREE] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 48 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -191,13 +191,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WEEDLE] = {
 #if ENGLISH
-        { .songLengthId = 14 },
-        { .songLengthId = 38 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        { .songId = PHONEME_ID(PH_FOOT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -205,13 +205,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KAKUNA] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 39 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -219,12 +219,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BEEDRILL] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -233,13 +233,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PIDGEY] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -247,28 +247,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PIDGEOTTO] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_PIDGEOT] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 21 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -276,12 +276,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RATTATA] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId =  0 },
-        { .songLengthId = 44 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -290,12 +290,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RATICATE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId =  3 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -304,13 +304,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SPEAROW] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -318,13 +318,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FEAROW] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -332,12 +332,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_EKANS] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -346,12 +346,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ARBOK] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 23 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -360,13 +360,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PIKACHU] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -374,13 +374,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RAICHU] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -388,12 +388,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SANDSHREW] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -402,13 +402,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SANDSLASH] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -416,13 +416,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NIDORAN_F] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -430,28 +430,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NIDORINA] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_NIDOQUEEN] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -459,13 +459,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NIDORAN_M] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -473,28 +473,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NIDORINO] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_NIDOKING] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -502,12 +502,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CLEFAIRY] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 11 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -516,12 +516,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CLEFABLE] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
-        { .songLengthId = 36 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -530,12 +530,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VULPIX] = {
 #if ENGLISH
-        { .songLengthId = 36 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -544,13 +544,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NINETALES] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 5 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -558,15 +558,15 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_JIGGLYPUFF] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 39 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -574,15 +574,15 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WIGGLYTUFF] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 39 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -590,12 +590,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ZUBAT] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -604,12 +604,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GOLBAT] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -618,13 +618,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ODDISH] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -632,12 +632,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GLOOM] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -646,12 +646,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VILEPLUME] = {
 #if ENGLISH
-        { .songLengthId = 20 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -660,12 +660,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PARAS] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -674,13 +674,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PARASECT] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId =  0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -688,12 +688,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VENONAT] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 26 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -702,12 +702,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VENOMOTH] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 26 },
-        { .songLengthId = 21 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -716,12 +716,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DIGLETT] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -730,12 +730,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DUGTRIO] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -744,13 +744,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MEOWTH] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 33 },
-        { .songLengthId = 17 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -758,27 +758,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PERSIAN] = {
 #if ENGLISH
-        { .songLengthId = 50 },
-        { .songLengthId = 17 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_PSYDUCK] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -787,13 +787,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GOLDUCK] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -801,12 +801,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MANKEY] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -815,12 +815,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PRIMEAPE] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -829,13 +829,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GROWLITHE] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -843,14 +843,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ARCANINE] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId =  3 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -858,12 +858,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_POLIWAG] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 12 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -872,13 +872,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_POLIWHIRL] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 12 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -886,12 +886,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_POLIWRATH] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 12 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -900,12 +900,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ABRA] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -914,13 +914,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KADABRA] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId =  0 },
-        { .songLengthId = 44 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -928,14 +928,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ALAKAZAM] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 44 },
-        { .songLengthId = 44 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -943,13 +943,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MACHOP] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -957,12 +957,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MACHOKE] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -971,28 +971,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MACHAMP] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_BELLSPROUT] = {
 #if ENGLISH
-        { .songLengthId = 11 },
-        { .songLengthId = 33 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1000,45 +1000,45 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WEEPINBELL] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 15 },
-        { .songLengthId = 11 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
     },
     [SPECIES_VICTREEBEL] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_TENTACOOL] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1046,14 +1046,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TENTACRUEL] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1061,28 +1061,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GEODUDE] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_GRAVELER] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1090,13 +1090,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GOLEM] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1104,13 +1104,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PONYTA] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1118,13 +1118,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RAPIDASH] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 17 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1132,12 +1132,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SLOWPOKE] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1146,12 +1146,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SLOWBRO] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1160,28 +1160,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAGNEMITE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 18 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_MAGNETON] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1189,13 +1189,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FARFETCHD] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 11 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1203,12 +1203,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DODUO] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1217,12 +1217,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DODRIO] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1231,12 +1231,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SEEL] = {
 #if ENGLISH
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1245,12 +1245,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DEWGONG] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1259,13 +1259,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GRIMER] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1273,13 +1273,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MUK] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1287,12 +1287,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SHELLDER] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1301,13 +1301,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CLOYSTER] = {
 #if ENGLISH
-        { .songLengthId = 30 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CHOICE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1315,13 +1315,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GASTLY] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1329,13 +1329,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HAUNTER] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1343,12 +1343,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GENGAR] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 8 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1357,12 +1357,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ONIX] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1371,27 +1371,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DROWZEE] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_HYPNO] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1400,12 +1400,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KRABBY] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1414,12 +1414,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KINGLER] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1428,13 +1428,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VOLTORB] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1442,13 +1442,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ELECTRODE] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1456,14 +1456,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_EXEGGCUTE] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 44 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1471,29 +1471,29 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_EXEGGUTOR] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 44 },
-        { .songLengthId = 9 },
-        { .songLengthId = 50 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
     },
     [SPECIES_CUBONE] = {
 #if ENGLISH
-        { .songLengthId = 45 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1501,12 +1501,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAROWAK] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 26 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1515,13 +1515,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HITMONLEE] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 21 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1529,12 +1529,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HITMONCHAN] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 21 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1543,11 +1543,11 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LICKITUNG] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -1557,12 +1557,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KOFFING] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1571,12 +1571,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WEEZING] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1585,12 +1585,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RHYHORN] = {
 #if ENGLISH
-        { .songLengthId = 20 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1599,13 +1599,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RHYDON] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1613,28 +1613,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CHANSEY] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_TANGELA] = {
 #if ENGLISH
-        { .songLengthId =  2 },
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_TRAP_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1642,14 +1642,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KANGASKHAN] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId =  0 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1657,13 +1657,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HORSEA] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1671,13 +1671,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SEADRA] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1685,13 +1685,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GOLDEEN] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1699,12 +1699,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SEAKING] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1713,12 +1713,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_STARYU] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1727,13 +1727,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_STARMIE] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1741,13 +1741,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MR_MIME] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 48 },
-        { .songLengthId = 18 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1755,12 +1755,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SCYTHER] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1769,13 +1769,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_JYNX] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1783,14 +1783,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ELECTABUZZ] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 9 },
-        { .songLengthId = 44 },
-        { .songLengthId = 44 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1798,12 +1798,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAGMAR] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 29 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1812,12 +1812,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PINSIR] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1826,13 +1826,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TAUROS] = {
 #if ENGLISH
-        { .songLengthId = 29 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1840,13 +1840,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAGIKARP] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 17 },
-        { .songLengthId = 27 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1854,14 +1854,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GYARADOS] = {
 #if ENGLISH
-        { .songLengthId = 29 },
-        { .songLengthId = 9 },
-        { .songLengthId = 17 },
-        { .songLengthId = 29 },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1869,12 +1869,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LAPRAS] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1883,12 +1883,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DITTO] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1897,13 +1897,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_EEVEE] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1911,14 +1911,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VAPOREON] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 21 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1926,12 +1926,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_JOLTEON] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 12 },
-        { .songLengthId = 21 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -1940,13 +1940,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FLAREON] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 12 },
-        { .songLengthId = 21 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1954,13 +1954,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PORYGON] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 21 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -1968,43 +1968,43 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_OMANYTE] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_OMASTAR] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_KABUTO] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 39 },
-        { .songLengthId = 26 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2012,14 +2012,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KABUTOPS] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 39 },
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2027,29 +2027,29 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_AERODACTYL] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
     },
     [SPECIES_SNORLAX] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2057,13 +2057,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ARTICUNO] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 17 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -2072,12 +2072,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ZAPDOS] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2086,13 +2086,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MOLTRES] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2100,13 +2100,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DRATINI] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2114,14 +2114,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DRAGONAIR] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 21 },
-        { .songLengthId = 11 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2129,13 +2129,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DRAGONITE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 21 },
-        { .songLengthId = 18 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2143,26 +2143,26 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MEWTWO] = {
 #if ENGLISH
-        { .songLengthId = 45 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_MEW] = {
 #if ENGLISH
-        { .songLengthId = 45 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2171,27 +2171,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CHIKORITA] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_BAYLEEF] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2200,60 +2200,60 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MEGANIUM] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_CYNDAQUIL] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 42 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_QUILAVA] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 6 },
-        { .songLengthId = 8 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_TYPHLOSION] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -2261,28 +2261,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TOTODILE] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 18 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_CROCONAW] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 24 },
-        { .songLengthId = 27 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2290,28 +2290,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FERALIGATR] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId =  0 },
-        { .songLengthId = 15 },
-        { .songLengthId =  3 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
     },
     [SPECIES_SENTRET] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2320,42 +2320,42 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FURRET] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_HOOTHOOT] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_NOCTOWL] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 33 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2364,13 +2364,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LEDYBA] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2378,13 +2378,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LEDIAN] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2392,13 +2392,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SPINARAK] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 48 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2406,27 +2406,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ARIADOS] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_CROBAT] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2435,12 +2435,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CHINCHOU] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 33 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2449,12 +2449,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LANTURN] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2463,12 +2463,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PICHU] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2477,12 +2477,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CLEFFA] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2491,14 +2491,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_IGGLYBUFF] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 42 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2506,13 +2506,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TOGEPI] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2520,13 +2520,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TOGETIC] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 17 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2534,12 +2534,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NATU] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2548,12 +2548,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_XATU] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2562,13 +2562,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAREEP] = {
 #if ENGLISH
-        { .songLengthId = 29 },
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2576,13 +2576,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FLAAFFY] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2590,14 +2590,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_AMPHAROS] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 6 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2605,14 +2605,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BELLOSSOM] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 27 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2620,12 +2620,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MARILL] = {
 #if ENGLISH
-        { .songLengthId = 8 },
-        { .songLengthId = 16 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_HELD) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2634,43 +2634,43 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_AZUMARILL] = {
 #if ENGLISH
-        { .songLengthId = 8 },
-        { .songLengthId = 39 },
-        { .songLengthId = 44 },
-        { .songLengthId = 16 },
+        { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_HELD) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_SUDOWOODO] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_POLITOED] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -2679,12 +2679,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HOPPIP] = {
 #if ENGLISH
-        { .songLengthId = 29 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2693,13 +2693,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SKIPLOOM] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2707,13 +2707,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_JUMPLUFF] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2721,12 +2721,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_AIPOM] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2735,12 +2735,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SUNKERN] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2749,13 +2749,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SUNFLORA] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 24 },
-        { .songLengthId = 44 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2763,12 +2763,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_YANMA] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2777,13 +2777,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WOOPER] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2791,12 +2791,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_QUAGSIRE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 18 },
-        { .songLengthId = 50 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2805,14 +2805,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ESPEON] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2820,14 +2820,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_UMBREON] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 12 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2835,12 +2835,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MURKROW] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2849,13 +2849,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SLOWKING] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2863,73 +2863,73 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MISDREAVUS] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_UNOWN] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_WOBBUFFET] = {
 #if ENGLISH
-        { .songLengthId = 29 },
-        { .songLengthId = 44 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
     },
     [SPECIES_GIRAFARIG] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId =  0 },
-        { .songLengthId = 42 },
-        { .songLengthId = 17 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_PINECO] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2938,14 +2938,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FORRETRESS] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2953,13 +2953,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DUNSPARCE] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 28 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_HELD) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -2967,12 +2967,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GLIGAR] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2981,12 +2981,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_STEELIX] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -2995,12 +2995,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SNUBBULL] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3009,12 +3009,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GRANBULL] = {
 #if ENGLISH
-        { .songLengthId =  2 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3023,13 +3023,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_QWILFISH] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3037,12 +3037,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SCIZOR] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 50 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3051,12 +3051,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SHUCKLE] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 38 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3065,14 +3065,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HERACROSS] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3080,12 +3080,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SNEASEL] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 38 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3094,29 +3094,29 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TEDDIURSA] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 48 },
-        { .songLengthId = 44 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_URSARING] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 44 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3124,12 +3124,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SLUGMA] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3138,13 +3138,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAGCARGO] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 27 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3152,12 +3152,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SWINUB] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3166,14 +3166,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PILOSWINE] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 26 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3181,13 +3181,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CORSOLA] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3195,43 +3195,43 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_REMORAID] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId =  3 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_OCTILLERY] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 17 },
-        { .songLengthId = 48 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_DELIBIRD] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3239,12 +3239,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MANTINE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3253,28 +3253,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SKARMORY] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 26 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_HOUNDOUR] = {
 #if ENGLISH
-        { .songLengthId = 35 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3282,13 +3282,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HOUNDOOM] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3296,27 +3296,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KINGDRA] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_PHANPY] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3325,12 +3325,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DONPHAN] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3339,29 +3339,29 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PORYGON2] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 12 },
-        { .songLengthId = 27 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
     },
     [SPECIES_STANTLER] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3369,13 +3369,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SMEARGLE] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 38 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3383,13 +3383,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TYROGUE] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3397,28 +3397,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HITMONTOP] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 21 },
-        { .songLengthId = 29 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_SMOOCHUM] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3426,14 +3426,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ELEKID] = {
 #if ENGLISH
-        { .songLengthId = 11 },
-        { .songLengthId = 11 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3441,12 +3441,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAGBY] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3455,12 +3455,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MILTANK] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3469,29 +3469,29 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BLISSEY] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
     },
     [SPECIES_RAIKOU] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3499,13 +3499,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ENTEI] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3513,29 +3513,29 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SUICUNE] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_LARVITAR] = {
 #if ENGLISH
-        { .songLengthId = 21 },
-        { .songLengthId = 17 },
-        { .songLengthId = 21 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_LOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3543,14 +3543,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PUPITAR] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 17 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3558,14 +3558,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TYRANITAR] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId =  0 },
-        { .songLengthId = 17 },
-        { .songLengthId = 27 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3573,13 +3573,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LUGIA] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3587,12 +3587,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HO_OH] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3601,13 +3601,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CELEBI] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3815,13 +3815,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TREECKO] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3829,13 +3829,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GROVYLE] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3843,13 +3843,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SCEPTILE] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3857,12 +3857,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TORCHIC] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3871,13 +3871,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_COMBUSKEN] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 44 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -3886,13 +3886,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BLAZIKEN] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 17 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -3901,13 +3901,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MUDKIP] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -3915,27 +3915,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MARSHTOMP] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 29 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_SWAMPERT] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3944,14 +3944,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_POOCHYENA] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 12 },
-        { .songLengthId = 9 },
-        { .songLengthId = 44 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3959,14 +3959,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MIGHTYENA] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 12 },
-        { .songLengthId = 9 },
-        { .songLengthId = 44 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3974,12 +3974,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ZIGZAGOON] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId =  0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -3988,13 +3988,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LINOONE] = {
 #if ENGLISH
-        { .songLengthId = 20 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4002,13 +4002,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WURMPLE] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 36 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4016,13 +4016,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SILCOON] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 40 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOOSE_HELD) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4030,28 +4030,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BEAUTIFLY] = {
 #if ENGLISH
-        { .songLengthId = 45 },
-        { .songLengthId = 9 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CURE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_CASCOON] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4059,12 +4059,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DUSTOX] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 23 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_LOT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4073,12 +4073,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LOTAD] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4087,13 +4087,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LOMBRE] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4101,28 +4101,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LUDICOLO] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 26 },
-        { .songLengthId = 26 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_SEEDOT] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4130,12 +4130,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NUZLEAF] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4144,13 +4144,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SHIFTRY] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4158,13 +4158,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NINCADA] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 6 },
-        { .songLengthId = 6 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4172,12 +4172,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NINJASK] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4186,13 +4186,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SHEDINJA] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4200,13 +4200,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TAILLOW] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4214,12 +4214,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SWELLOW] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4228,11 +4228,11 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SHROOMISH] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -4242,12 +4242,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BRELOOM] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4256,12 +4256,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SPINDA] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4270,12 +4270,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WINGULL] = {
 #if ENGLISH
-        { .songLengthId = 15 },
-        { .songLengthId = 36 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4284,13 +4284,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PELIPPER] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4298,13 +4298,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SURSKIT] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4312,28 +4312,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MASQUERAIN] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 48 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_WAILMER] = {
 #if ENGLISH
-        { .songLengthId = 5 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4341,14 +4341,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WAILORD] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4356,13 +4356,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SKITTY] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4370,29 +4370,29 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DELCATTY] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_KECLEON] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4400,13 +4400,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BALTOY] = {
 #if ENGLISH
-        { .songLengthId =  1 },
-        { .songLengthId = 30 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_HELD) },
+        { .songId = PHONEME_ID(PH_CHOICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4414,27 +4414,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CLAYDOL] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_NOSEPASS] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4443,12 +4443,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TORKOAL] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4457,13 +4457,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SABLEYE] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 11 },
-        { .songLengthId = 18 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4471,12 +4471,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BARBOACH] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4485,12 +4485,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WHISCASH] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4499,13 +4499,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LUVDISC] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4513,12 +4513,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CORPHISH] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4527,13 +4527,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CRAWDAUNT] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4541,13 +4541,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FEEBAS] = {
 #if ENGLISH
-        { .songLengthId = 14 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -4556,14 +4556,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MILOTIC] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4571,43 +4571,43 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CARVANHA] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId =  1 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_HELD) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_SHARPEDO] = {
 #if ENGLISH
-        { .songLengthId = 29 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_TRAPINCH] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4615,13 +4615,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VIBRAVA] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 27 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4629,13 +4629,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_FLYGON] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4643,44 +4643,44 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAKUHITA] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 39 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_HARIYAMA] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 12 },
-        { .songLengthId = 27 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_ELECTRIKE] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 9 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4688,14 +4688,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MANECTRIC] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4703,13 +4703,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_NUMEL] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 11 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_DRESS_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4717,14 +4717,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CAMERUPT] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 48 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4732,13 +4732,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SPHEAL] = {
 #if ENGLISH
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4746,13 +4746,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SEALEO] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4760,27 +4760,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WALREIN] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId =  3 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_CACNEA] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4789,13 +4789,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CACTURNE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4803,12 +4803,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SNORUNT] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 44 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4817,13 +4817,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GLALIE] = {
 #if ENGLISH
-        { .songLengthId = 5 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4831,27 +4831,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LUNATONE] = {
 #if ENGLISH
-        { .songLengthId = 39 },
-        { .songLengthId = 44 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_SOLROCK] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4860,14 +4860,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_AZURILL] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4875,12 +4875,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SPOINK] = {
 #if ENGLISH
-        { .songLengthId = 30 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CHOICE_BLEND) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4889,12 +4889,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GRUMPIG] = {
 #if ENGLISH
-        { .songLengthId = 44 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4903,12 +4903,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_PLUSLE] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 36 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4917,12 +4917,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MINUN] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4931,13 +4931,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MAWILE] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -4945,14 +4945,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MEDITITE] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 17 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4960,27 +4960,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_MEDICHAM] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 17 },
-        { .songLengthId =  0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_SWABLU] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -4989,27 +4989,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ALTARIA] = {
 #if ENGLISH
-        { .songLengthId = 6 },
-        { .songLengthId = 27 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_CLOTH_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_WYNAUT] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5018,12 +5018,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DUSKULL] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 38 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_FOOT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5032,12 +5032,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DUSCLOPS] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5046,27 +5046,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ROSELIA] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_SLAKOTH] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5075,12 +5075,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VIGOROTH] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 48 },
-        { .songLengthId = 27 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5089,13 +5089,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SLAKING] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5103,12 +5103,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GULPIN] = {
 #if ENGLISH
-        { .songLengthId = 36 },
-        { .songLengthId = 15 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FOOT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5117,12 +5117,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SWALOT] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5131,14 +5131,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_TROPIUS] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5146,12 +5146,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_WHISMUR] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 48 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5160,27 +5160,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LOUDRED] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_EXPLOUD] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 33 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5189,12 +5189,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CLAMPERL] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 50 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5203,42 +5203,42 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_HUNTAIL] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 5 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_GOREBYSS] = {
 #if ENGLISH
-        { .songLengthId = 26 },
-        { .songLengthId = 44 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        { .songId = PHONEME_ID(PH_STRUT_SOLO) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_ABSOL] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5247,12 +5247,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SHUPPET] = {
 #if ENGLISH
-        { .songLengthId = 42 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5261,13 +5261,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BANETTE] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5275,13 +5275,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SEVIPER] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 18 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5289,12 +5289,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ZANGOOSE] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 39 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5303,14 +5303,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RELICANTH] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 17 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5318,27 +5318,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ARON] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 29 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
+        PREV_BARD_SOUND,
         NULL_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_LAIRON] = {
 #if ENGLISH
-        { .songLengthId = 5 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5347,12 +5347,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_AGGRON] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5361,13 +5361,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CASTFORM] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 26 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5375,13 +5375,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_VOLBEAT] = {
 #if ENGLISH
-        { .songLengthId = 24 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5389,27 +5389,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ILLUMISE] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 39 },
-        { .songLengthId = 12 },
-        { .songLengthId =  3 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_LILEEP] = {
 #if ENGLISH
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5418,13 +5418,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CRADILY] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId = 17 },
-        { .songLengthId = 12 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5432,13 +5432,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ANORITH] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 17 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5446,14 +5446,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_ARMALDO] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 27 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5461,12 +5461,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RALTS] = {
 #if ENGLISH
-        { .songLengthId =  7 },
-        { .songLengthId = 51 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_CLOTH_HELD) },
+        PREV_BARD_SOUND,
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5475,13 +5475,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_KIRLIA] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 12 },
-        { .songLengthId = 42 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5489,13 +5489,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GARDEVOIR] = {
 #if ENGLISH
-        { .songLengthId = 27 },
-        { .songLengthId = 9 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
 #endif
@@ -5504,12 +5504,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_BAGON] = {
 #if ENGLISH
-        { .songLengthId = 5 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_SOLO) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 39 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5518,12 +5518,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SHELGON] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5532,27 +5532,27 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_SALAMENCE] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId =  0 },
-        { .songLengthId = 9 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 39 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_BELDUM] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5561,12 +5561,12 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_METANG] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5575,14 +5575,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_METAGROSS] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 42 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 0 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5590,13 +5590,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_REGIROCK] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 27 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5604,14 +5604,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_REGICE] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 18 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5619,28 +5619,28 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_REGISTEEL] = {
 #if ENGLISH
-        { .songLengthId = 9 },
-        { .songLengthId = 12 },
-        { .songLengthId = 14 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 15 },
-        { .songLengthId = 9 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_KYOGRE] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 24 },
-        { .songLengthId = 48 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
-        { .songLengthId = 9 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5648,13 +5648,13 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_GROUDON] = {
 #if ENGLISH
-        { .songLengthId = 33 },
-        { .songLengthId = 27 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_MOUTH_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 24 },
-        { .songLengthId = 39 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOOSE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
@@ -5662,29 +5662,29 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_RAYQUAZA] = {
 #if ENGLISH
-        { .songLengthId =  3 },
-        { .songLengthId =  3 },
-        { .songLengthId = 42 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_FACE_BLEND) },
+        { .songId = PHONEME_ID(PH_STRUT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
     [SPECIES_LATIAS] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId =  0 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5692,14 +5692,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_LATIOS] = {
 #if ENGLISH
-        { .songLengthId =  0 },
-        { .songLengthId = 12 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 24 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5707,14 +5707,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_JIRACHI] = {
 #if ENGLISH
-        { .songLengthId = 48 },
-        { .songLengthId = 27 },
-        { .songLengthId = 12 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_NURSE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5722,14 +5722,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_DEOXYS] = {
 #if ENGLISH
-        { .songLengthId = 12 },
-        { .songLengthId = 27 },
-        { .songLengthId = 17 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_FLEECE_BLEND) },
+        { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_SOLO) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
         NULL_BARD_SOUND,
 #endif
         NULL_BARD_SOUND,
@@ -5737,15 +5737,15 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
     },
     [SPECIES_CHIMECHO] = {
 #if ENGLISH
-        { .songLengthId = 18 },
-        { .songLengthId = 9 },
-        { .songLengthId = 24 },
-        { .songLengthId = 51 },
+        { .songId = PHONEME_ID(PH_PRICE_BLEND) },
+        { .songId = PHONEME_ID(PH_DRESS_BLEND) },
+        { .songId = PHONEME_ID(PH_GOAT_BLEND) },
+        PREV_BARD_SOUND,
 #elif GERMAN
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
-        { .songLengthId = 0 },
-        { .songLengthId = 15 },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
+        { .songId = PHONEME_ID(PH_TRAP_BLEND) },
+        { .songId = PHONEME_ID(PH_KIT_BLEND) },
 #endif
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,

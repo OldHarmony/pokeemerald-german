@@ -20,7 +20,7 @@ gText_PleaseComeAgain::
 
 gText_PlayerWhatCanIDoForYou::
 	.ifdef ENGLISH
-	.string "{PLAYER}{STRING 5}, welcome!\p"
+	.string "{PLAYER}{KUN}, welcome!\p"
 	.string "What can I do for you?$"
 	.else
 	.ifdef GERMAN

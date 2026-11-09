@@ -92,7 +92,7 @@ static const struct BgTemplate sBackgroundTemplates[] =
   }
 };
 
-static const u16 sFontPalette[] = INCBIN_U16("graphics/bag/berry_tag_screen.gbapal");
+static const u16 sFontPalette[] = INCGFX_U16("graphics/bag/berry_tag_screen.pal", ".gbapal");
 
 static const u8 sTextColors[2][3] =
 {
@@ -359,7 +359,7 @@ static bool8 LoadBerryTagGfx(void)
         }
         break;
     case 2:
-        LZDecompressWram(gBerryTag_Pal, sBerryTag->tilemapBuffers[2]);
+        LZDecompressWram(gBerryTag_Tilemap, sBerryTag->tilemapBuffers[2]);
         sBerryTag->gfxState++;
         break;
     case 3:
@@ -437,7 +437,7 @@ static void PrintBerryNumberAndName(void)
 #if ENGLISH
     StringCopy(gStringVar2, berry->name);
 #elif GERMAN
-    StringCopy(gStringVar2, ItemId_GetName(BERRY_TO_ITEM(sBerryTag->berryId)));
+    StringCopy(gStringVar2, GetItemName(BERRY_TO_ITEM(sBerryTag->berryId)));
 #endif
     StringExpandPlaceholders(gStringVar4, gText_NumberVar1Var2);
     PrintTextInBerryTagScreen(WIN_BERRY_NAME, gStringVar4, 0, 1, 0, 0);

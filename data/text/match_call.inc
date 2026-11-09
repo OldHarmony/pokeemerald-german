@@ -4904,7 +4904,7 @@ MatchCall_Text_Mom3::
 	.endif
 	.endif
 
-MatchCall_Text_Roxanne1::
+MatchCall_Text_Roxanne_Preparing::
 	.ifdef ENGLISH
 	.string "ROXANNE: Oh, hello, {PLAYER}!\p"
 	.string "I've been hard at work retraining\n"
@@ -4926,7 +4926,7 @@ MatchCall_Text_Roxanne1::
 	.endif
 	.endif
 
-MatchCall_Text_Roxanne2::
+MatchCall_Text_Roxanne_PreparingPostGame::
 	.ifdef ENGLISH
 	.string "ROXANNE: Is this {PLAYER}?\n"
 	.string "Congratulations!\l"
@@ -4947,7 +4947,7 @@ MatchCall_Text_Roxanne2::
 	.endif
 	.endif
 
-MatchCall_Text_Roxanne3::
+MatchCall_Text_Roxanne_RematchReady::
 	.ifdef ENGLISH
 	.string "ROXANNE: {PLAYER}!\n"
 	.string "My GYM is ready!\p"
@@ -4962,7 +4962,7 @@ MatchCall_Text_Roxanne3::
 	.endif
 	.endif
 
-MatchCall_Text_Roxanne4::
+MatchCall_Text_Roxanne_PostRematch::
 	.ifdef ENGLISH
 	.string "ROXANNE: At the RUSTBORO GYM,\n"
 	.string "the fact that we battled, {PLAYER},\l"
@@ -4975,7 +4975,7 @@ MatchCall_Text_Roxanne4::
 	.endif
 	.endif
 
-MatchCall_Text_Brawly1::
+MatchCall_Text_Brawly_Preparing::
 	.ifdef ENGLISH
 	.string "BRAWLY: Hey, there, {PLAYER}{KUN}!\p"
 	.string "I learned a lot from the battle we\n"
@@ -5001,7 +5001,7 @@ MatchCall_Text_Brawly1::
 	.endif
 	.endif
 
-MatchCall_Text_Brawly2::
+MatchCall_Text_Brawly_PreparingPostGame::
 	.ifdef ENGLISH
 	.string "BRAWLY: Hey, {PLAYER}{KUN}!\n"
 	.string "Congratulations!\p"
@@ -5028,7 +5028,7 @@ MatchCall_Text_Brawly2::
 	.endif
 	.endif
 
-MatchCall_Text_Brawly3::
+MatchCall_Text_Brawly_RematchReady::
 	.ifdef ENGLISH
 	.string "BRAWLY: Hey, {PLAYER}{KUN}!\n"
 	.string "My GYM's ready for action!\p"
@@ -5043,7 +5043,7 @@ MatchCall_Text_Brawly3::
 	.endif
 	.endif
 
-MatchCall_Text_Brawly4::
+MatchCall_Text_Brawly_PostRematch::
 	.ifdef ENGLISH
 	.string "BRAWLY: {PLAYER}{KUN}, I don't think\n"
 	.string "I'll ever get bored of battling you!$"
@@ -5055,7 +5055,7 @@ MatchCall_Text_Brawly4::
 	.endif
 	.endif
 
-MatchCall_Text_Wattson1::
+MatchCall_Text_Wattson_Preparing::
 	.ifdef ENGLISH
 	.string "WATTSON: Oh, it's you!\p"
 	.string "After you left, I've been redoing\n"
@@ -5076,7 +5076,7 @@ MatchCall_Text_Wattson1::
 	.endif
 	.endif
 
-MatchCall_Text_Wattson2::
+MatchCall_Text_Wattson_PreparingPostGame::
 	.ifdef ENGLISH
 	.string "WATTSON: Wahahahaha!\p"
 	.string "You've really done it, haven't you?\n"
@@ -5101,7 +5101,7 @@ MatchCall_Text_Wattson2::
 	.endif
 	.endif
 
-MatchCall_Text_Wattson3::
+MatchCall_Text_Wattson_RematchReady::
 	.ifdef ENGLISH
 	.string "WATTSON: Oh, it's you!\n"
 	.string "My GYM's ready!\p"
@@ -5116,7 +5116,7 @@ MatchCall_Text_Wattson3::
 	.endif
 	.endif
 
-MatchCall_Text_Wattson4::
+MatchCall_Text_Wattson_PostRematch::
 	.ifdef ENGLISH
 	.string "WATTSON: Wahahaha!\p"
 	.string "A battle with you is always charged\n"
@@ -5129,7 +5129,7 @@ MatchCall_Text_Wattson4::
 	.endif
 	.endif
 
-MatchCall_Text_Flannery1::
+MatchCall_Text_Flannery_Preparing::
 	.ifdef ENGLISH
 	.string "FLANNERY: {PLAYER}…\p"
 	.string "When we battled, I learned exactly\n"
@@ -5152,7 +5152,7 @@ MatchCall_Text_Flannery1::
 	.endif
 	.endif
 
-MatchCall_Text_Flannery2::
+MatchCall_Text_Flannery_PreparingPostGame::
 	.ifdef ENGLISH
 	.string "FLANNERY: Hello, {PLAYER}?\n"
 	.string "Congratulations!\p"
@@ -5177,7 +5177,7 @@ MatchCall_Text_Flannery2::
 	.endif
 	.endif
 
-MatchCall_Text_Flannery3::
+MatchCall_Text_Flannery_RematchReady::
 	.ifdef ENGLISH
 	.string "FLANNERY: Oh, {PLAYER}?\n"
 	.string "Our GYM's ready!\p"
@@ -5192,7 +5192,7 @@ MatchCall_Text_Flannery3::
 	.endif
 	.endif
 
-MatchCall_Text_Flannery4::
+MatchCall_Text_Flannery_PostRematch::
 	.ifdef ENGLISH
 	.string "FLANNERY: {PLAYER}…\n"
 	.string "I'm positive that you keep getting\l"
@@ -5205,7 +5205,7 @@ MatchCall_Text_Flannery4::
 	.endif
 	.endif
 
-MatchCall_Text_Winona1::
+MatchCall_Text_Winona_Preparing::
 	.ifdef ENGLISH
 	.string "WINONA: Hello, {PLAYER}!\p"
 	.string "Thanks to our battle, I've come\n"
@@ -5223,7 +5223,7 @@ MatchCall_Text_Winona1::
 	.endif
 	.endif
 
-MatchCall_Text_Winona2::
+MatchCall_Text_Winona_PreparingPostGame::
 	.ifdef ENGLISH
 	.string "WINONA: You've done it, {PLAYER}!\p"
 	.string "News about the new CHAMPION\n"
@@ -5241,7 +5241,7 @@ MatchCall_Text_Winona2::
 	.endif
 	.endif
 
-MatchCall_Text_Winona3::
+MatchCall_Text_Winona_RematchReady::
 	.ifdef ENGLISH
 	.string "WINONA: Is this {PLAYER}?\n"
 	.string "Our GYM is back in operation!\p"
@@ -5255,7 +5255,7 @@ MatchCall_Text_Winona3::
 	.endif
 	.endif
 
-MatchCall_Text_Winona4::
+MatchCall_Text_Winona_PostRematch::
 	.ifdef ENGLISH
 	.string "WINONA: {PLAYER}…\n"
 	.string "Though I have lost, my wings will\l"
@@ -5272,7 +5272,7 @@ MatchCall_Text_Winona4::
 	.endif
 	.endif
 
-MatchCall_Text_TateLiza1::
+MatchCall_Text_TateLiza_Preparing::
 	.ifdef ENGLISH
 	.string "TATE: Oh! You're…\n"
 	.string "LIZA: {PLAYER}!\p"
@@ -5297,7 +5297,7 @@ MatchCall_Text_TateLiza1::
 	.endif
 	.endif
 
-MatchCall_Text_TateLiza2::
+MatchCall_Text_TateLiza_PreparingPostGame::
 	.ifdef ENGLISH
 	.string "TATE: {PLAYER}, congratulations!\n"
 	.string "LIZA: {PLAYER}, congratulations!\p"
@@ -5321,7 +5321,7 @@ MatchCall_Text_TateLiza2::
 	.endif
 	.endif
 
-MatchCall_Text_TateLiza3::
+MatchCall_Text_TateLiza_RematchReady::
 	.ifdef ENGLISH
 	.string "TATE: {PLAYER}!\n"
 	.string "LIZA: {PLAYER}!\p"
@@ -5340,7 +5340,7 @@ MatchCall_Text_TateLiza3::
 	.endif
 	.endif
 
-MatchCall_Text_TateLiza4::
+MatchCall_Text_TateLiza_PostRematch::
 	.ifdef ENGLISH
 	.string "TATE: {PLAYER}, the battle we had…\n"
 	.string "LIZA: Is an invaluable experience.\p"
@@ -5357,7 +5357,7 @@ MatchCall_Text_TateLiza4::
 	.endif
 	.endif
 
-MatchCall_Text_Juan1::
+MatchCall_Text_Juan_Preparing::
 	.ifdef ENGLISH
 	.string "JUAN: Hmm…\n"
 	.string "{PLAYER}{KUN}… Was it?\p"
@@ -5378,7 +5378,7 @@ MatchCall_Text_Juan1::
 	.endif
 	.endif
 
-MatchCall_Text_Juan2::
+MatchCall_Text_Juan_PreparingPostGame::
 	.ifdef ENGLISH
 	.string "JUAN: Fufu… {PLAYER}{KUN}…\n"
 	.string "You've finally achieved your goal.\p"
@@ -5400,7 +5400,7 @@ MatchCall_Text_Juan2::
 	.endif
 	.endif
 
-MatchCall_Text_Juan3::
+MatchCall_Text_Juan_RematchReady::
 	.ifdef ENGLISH
 	.string "JUAN: Hoho… {PLAYER}{KUN}…\p"
 	.string "Our SOOTOPOLIS GYM has finally\n"
@@ -5417,7 +5417,7 @@ MatchCall_Text_Juan3::
 	.endif
 	.endif
 
-MatchCall_Text_Juan4::
+MatchCall_Text_Juan_PostRematch::
 	.ifdef ENGLISH
 	.string "JUAN: {PLAYER}{KUN}…\p"
 	.string "Like the finest music, the battles\n"
@@ -6634,7 +6634,7 @@ MatchCall_Text_Norman5::
 	.endif
 	.endif
 
-MatchCall_Text_Norman6::
+MatchCall_Text_Norman_Preparing::
 	.ifdef ENGLISH
 	.string "DAD: Hiyah! Haah! Dwah!\p"
 	.string "…Oh? {PLAYER}!\p"
@@ -6649,7 +6649,7 @@ MatchCall_Text_Norman6::
 	.endif
 	.endif
 
-MatchCall_Text_Norman7::
+MatchCall_Text_Norman_PreparingPostGame::
 	.ifdef ENGLISH
 	.string "DAD: {PLAYER}!\p"
 	.string "Who would've thought you'd become\n"
@@ -6667,7 +6667,7 @@ MatchCall_Text_Norman7::
 	.endif
 	.endif
 
-MatchCall_Text_Norman8::
+MatchCall_Text_Norman_RematchReady::
 	.ifdef ENGLISH
 	.string "DAD: Hm? {PLAYER}?\n"
 	.string "What good timing!\p"
@@ -6686,7 +6686,7 @@ MatchCall_Text_Norman8::
 	.endif
 	.endif
 
-MatchCall_Text_Norman9::
+MatchCall_Text_Norman_PostRematch::
 	.ifdef ENGLISH
 	.string "DAD: …You amaze me, {PLAYER}.\n"
 	.string "How much higher will you soar?$"

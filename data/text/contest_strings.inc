@@ -729,7 +729,7 @@ gText_MonAppealedWithMove::
 gText_MonWasWatchingOthers::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} was watching\n"
-	.string "the others.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "the others.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} beobachtet\n"
@@ -740,7 +740,7 @@ gText_MonWasWatchingOthers::
 gText_AllOutOfAppealTime::
 	.ifdef ENGLISH
 	.string "We're all out of\n"
-	.string "Appeal Time!{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "Appeal Time!{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Soweit zur\n"
@@ -1641,7 +1641,7 @@ gText_ScrambledUpOrderForNextTurn::
 gText_JudgeLookedAtMonExpectantly::
 	.ifdef ENGLISH
 	.string "The JUDGE looked at\n"
-	.string "{STR_VAR_1} expectantly.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "{STR_VAR_1} expectantly.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Der JUROR betrachtet\n"
@@ -1652,7 +1652,7 @@ gText_JudgeLookedAtMonExpectantly::
 gText_AppealComboWentOverWell::
 	.ifdef ENGLISH
 	.string "The appeal combo went\n"
-	.string "over well.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "over well.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Die Combo der Ausdrücke\n"
@@ -1663,7 +1663,7 @@ gText_AppealComboWentOverWell::
 gText_AppealComboWentOverVeryWell::
 	.ifdef ENGLISH
 	.string "The appeal combo went\n"
-	.string "over very well.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "over very well.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Die Combo der Ausdrücke\n"
@@ -1674,7 +1674,7 @@ gText_AppealComboWentOverVeryWell::
 gText_AppealComboWentOverExcellently::
 	.ifdef ENGLISH
 	.string "The appeal combo went\n"
-	.string "over excellently.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "over excellently.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Die Combo der Ausdrücke\n"
@@ -1685,7 +1685,7 @@ gText_AppealComboWentOverExcellently::
 gText_MonManagedToAvertGaze::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} managed to\n"
-	.string "avert its gaze.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "avert its gaze.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} gelingt es,\n"
@@ -1696,7 +1696,7 @@ gText_MonManagedToAvertGaze::
 gText_MonManagedToAvoidSeeingIt::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} managed to\n"
-	.string "avoid seeing it.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "avoid seeing it.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} wandte den\n"
@@ -1707,7 +1707,7 @@ gText_MonManagedToAvoidSeeingIt::
 gText_MonIsntFazedByThatSortOfThing::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} isn't fazed\n"
-	.string "by that sort of thing.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "by that sort of thing.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} lässt sich\n"
@@ -1718,7 +1718,7 @@ gText_MonIsntFazedByThatSortOfThing::
 gText_MonBecameALittleDistracted::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} became a\n"
-	.string "little distracted.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "little distracted.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} wurde etwas\n"
@@ -1729,7 +1729,7 @@ gText_MonBecameALittleDistracted::
 gText_TriedToStartleOtherPokemon::
 	.ifdef ENGLISH
 	.string "It tried to startle the\n"
-	.string "other POKéMON.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "other POKéMON.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Es versucht, die anderen\n"
@@ -1740,7 +1740,7 @@ gText_TriedToStartleOtherPokemon::
 gText_MonLookedDownOutOfDistraction::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} looked down\n"
-	.string "out of distraction.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "out of distraction.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} blickt\n"
@@ -1751,7 +1751,7 @@ gText_MonLookedDownOutOfDistraction::
 gText_MonTurnedBackOutOfDistraction::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} turned back\n"
-	.string "out of distraction.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "out of distraction.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} dreht sich\n"
@@ -1762,7 +1762,7 @@ gText_MonTurnedBackOutOfDistraction::
 gText_MonCouldntHelpUtteringCry::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} couldn't help\n"
-	.string "uttering a cry.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "uttering a cry.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} kann einen \n"
@@ -1773,7 +1773,7 @@ gText_MonCouldntHelpUtteringCry::
 gText_MonCouldntHelpLeapingUp::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} couldn't help\n"
-	.string "leaping up.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "leaping up.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} kann nicht\n"
@@ -1784,7 +1784,7 @@ gText_MonCouldntHelpLeapingUp::
 gText_MonTrippedOutOfDistraction::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} tripped over\n"
-	.string "out of distraction.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "out of distraction.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} ist so irri-\n"
@@ -1795,7 +1795,7 @@ gText_MonTrippedOutOfDistraction::
 gText_MonWasTooNervousToMove::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} was too\n"
-	.string "nervous to move.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "nervous to move.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} ist zu nervös,\n"
@@ -1805,7 +1805,7 @@ gText_MonWasTooNervousToMove::
 
 gText_ButItMessedUp2::
 	.ifdef ENGLISH
-	.string "But it messed up.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "But it messed up.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Es hatte keinen Erfolg.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
@@ -1815,7 +1815,7 @@ gText_ButItMessedUp2::
 gText_ButItFailedToMakeTargetNervous::
 	.ifdef ENGLISH
 	.string "But it failed to make\n"
-	.string "the target nervous.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "the target nervous.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Es konnte keine\n"
@@ -1826,7 +1826,7 @@ gText_ButItFailedToMakeTargetNervous::
 gText_ButItFailedToMakeAnyoneNervous::
 	.ifdef ENGLISH
 	.string "But it failed to make\n"
-	.string "anyone nervous.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "anyone nervous.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Aber es konnte niemanden\n"
@@ -1836,7 +1836,7 @@ gText_ButItFailedToMakeAnyoneNervous::
 
 gText_ButItWasIgnored::
 	.ifdef ENGLISH
-	.string "But it was ignored…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "But it was ignored…{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Es wurde ignoriert…{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
@@ -1846,7 +1846,7 @@ gText_ButItWasIgnored::
 gText_CouldntImproveItsCondition::
 	.ifdef ENGLISH
 	.string "But it couldn't improve\n"
-	.string "its condition…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "its condition…{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Es konnte seinen Aus-\n"
@@ -1857,7 +1857,7 @@ gText_CouldntImproveItsCondition::
 gText_BadConditionResultedInWeakAppeal::
 	.ifdef ENGLISH
 	.string "Its bad condition\n"
-	.string "resulted in a weak appeal.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "resulted in a weak appeal.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Schwacher Ausdruck we-\n"
@@ -1868,7 +1868,7 @@ gText_BadConditionResultedInWeakAppeal::
 gText_MonWasUnaffected::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} was\n"
-	.string "unaffected.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "unaffected.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} blieb\n"
@@ -1879,7 +1879,7 @@ gText_MonWasUnaffected::
 gText_RepeatedAppeal::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} disappointed\n"
-	.string "by repeating an appeal.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "by repeating an appeal.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} enttäuscht\n"
@@ -1890,7 +1890,7 @@ gText_RepeatedAppeal::
 gText_MonsXWentOverGreat::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1}'s {STR_VAR_3}\n"
-	.string "went over great.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "went over great.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Die {STR_VAR_3} von\n"
@@ -1901,7 +1901,7 @@ gText_MonsXWentOverGreat::
 gText_MonsXDidntGoOverWell::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1}'s {STR_VAR_3}\n"
-	.string "didn't go over well here…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "didn't go over well here…{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Die {STR_VAR_3} von\n"
@@ -1912,7 +1912,7 @@ gText_MonsXDidntGoOverWell::
 gText_MonsXGotTheCrowdGoing::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1}'s {STR_VAR_3}\n"
-	.string "got the crowd going.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "got the crowd going.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} begeistert\n"
@@ -1923,7 +1923,7 @@ gText_MonsXGotTheCrowdGoing::
 gText_MonCantAppealNextTurn::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1} can't appeal\n"
-	.string "next turn…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "next turn…{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_1} setzt in der \n"
@@ -1934,7 +1934,7 @@ gText_MonCantAppealNextTurn::
 gText_AttractedCrowdsAttention::
 	.ifdef ENGLISH
 	.string "It attracted the crowd's\n"
-	.string "attention.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "attention.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Die Aufmerksamkeit des\n"
@@ -1945,7 +1945,7 @@ gText_AttractedCrowdsAttention::
 gText_CrowdContinuesToWatchMon::
 	.ifdef ENGLISH
 	.string "The crowd continues to\n"
-	.string "watch {STR_VAR_3}.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "watch {STR_VAR_3}.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "Das Publikum beobachtet\n"
@@ -1956,7 +1956,7 @@ gText_CrowdContinuesToWatchMon::
 gText_MonsMoveIsIgnored::
 	.ifdef ENGLISH
 	.string "{STR_VAR_1}'s\n"
-	.string "{STR_VAR_2} is ignored.{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
+	.string "{STR_VAR_2} is ignored.{PAUSE 15}{PAUSE 15}{PAUSE 15}{PAUSE 15}$"
 	.else
 	.ifdef GERMAN
 	.string "{STR_VAR_2} von\n"

@@ -1,6 +1,8 @@
 #ifndef GUARD_SAVE_H
 #define GUARD_SAVE_H
 
+#include "main.h"
+
 // Each 4 KiB flash sector contains 3968 bytes of actual data followed by a 128 byte footer.
 // Only 12 bytes of the footer are used.
 #define SECTOR_DATA_SIZE 3968
@@ -27,6 +29,9 @@
 #define SECTOR_ID_RECORDED_BATTLE    31
 #define SECTORS_COUNT                32
 
+#define NUM_SAVEBLOCK1_SECTORS (SECTOR_ID_SAVEBLOCK1_END - SECTOR_ID_SAVEBLOCK1_START + 1)
+#define NUM_SAVEBLOCK2_SECTORS (NUM_SECTORS_PER_SLOT - NUM_SAVEBLOCK1_SECTORS - NUM_PKMN_STORAGE_SECTORS)
+#define NUM_PKMN_STORAGE_SECTORS (SECTOR_ID_PKMN_STORAGE_END - SECTOR_ID_PKMN_STORAGE_START + 1)
 #define NUM_HOF_SECTORS 2
 
 #define SAVE_STATUS_EMPTY    0
@@ -87,7 +92,7 @@ extern u32 gSaveCounter;
 extern struct SaveSector *gFastSaveSector;
 extern u16 gIncrementalSectorId;
 extern u16 gSaveFileStatus;
-extern void (*gGameContinueCallback)(void);
+extern MainCallback gGameContinueCallback;
 extern struct SaveSectorLocation gRamSaveSectorLocations[];
 
 extern struct SaveSector gSaveDataBuffer;

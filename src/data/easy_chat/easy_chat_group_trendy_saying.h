@@ -73,9 +73,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_KthxBye,
 #if ENGLISH
-        .alphabeticalOrder = 7,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_1_HIT_KO_EXCL),
 #elif GERMAN
-        .alphabeticalOrder = 32,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_UGLY),
 #endif
         .enabled = TRUE,
     },
@@ -83,9 +83,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_YesSirExcl,
 #if ENGLISH
-        .alphabeticalOrder = 2,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AVANT_GARDE),
 #elif GERMAN
-        .alphabeticalOrder = 24,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HASSLE),
 #endif
         .enabled = TRUE,
     },
@@ -93,9 +93,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_AvantGarde,
 #if ENGLISH
-        .alphabeticalOrder = 28,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BABY),
 #elif GERMAN
-        .alphabeticalOrder = 2,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_AVANT_GARDE),
 #endif
         .enabled = TRUE,
     },
@@ -103,9 +103,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Couple,
 #if ENGLISH
-        .alphabeticalOrder = 22,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BANG),
 #elif GERMAN
-        .alphabeticalOrder = 1,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_YES_SIR_EXCL),
 #endif
         .enabled = TRUE,
     },
@@ -113,9 +113,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_MuchObliged,
 #if ENGLISH
-        .alphabeticalOrder = 9,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CANCEL),
 #elif GERMAN
-        .alphabeticalOrder = 28,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BABY),
 #endif
         .enabled = TRUE,
     },
@@ -123,9 +123,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_YeehawExcl,
 #if ENGLISH
-        .alphabeticalOrder = 3,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COUPLE),
 #elif GERMAN
-        .alphabeticalOrder = 17,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SHAKE),
 #endif
         .enabled = TRUE,
     },
@@ -133,9 +133,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Mega,
 #if ENGLISH
-        .alphabeticalOrder = 8,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DESTINY),
 #elif GERMAN
-        .alphabeticalOrder = 19,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_UPBEAT),
 #endif
         .enabled = TRUE,
     },
@@ -143,9 +143,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_1HitKOExcl,
 #if ENGLISH
-        .alphabeticalOrder = 26,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FEVER),
 #elif GERMAN
-        .alphabeticalOrder = 11,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FLATTEN),
 #endif
         .enabled = TRUE,
     },
@@ -153,25 +153,25 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Destiny,
 #if ENGLISH
-        .alphabeticalOrder = 11,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FLATTEN),
 #elif GERMAN
-        .alphabeticalOrder = 27,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WANNABE),
 #endif
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_CANCEL)] =
     {
         .text = gEasyChatWord_Cancel,
-        .alphabeticalOrder = 15,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HAPPENING),
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_NEW)] =
     {
         .text = gEasyChatWord_New,
 #if ENGLISH
-        .alphabeticalOrder = 24,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HASSLE),
 #elif GERMAN
-        .alphabeticalOrder = 7,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_1_HIT_KO_EXCL),
 #endif
         .enabled = TRUE,
     },
@@ -179,9 +179,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Flatten,
 #if ENGLISH
-        .alphabeticalOrder = 29,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HEART),
 #elif GERMAN
-        .alphabeticalOrder = 16,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HIP_AND),
 #endif
         .enabled = TRUE,
     },
@@ -189,9 +189,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Kidding,
 #if ENGLISH
-        .alphabeticalOrder = 16,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HIP_AND),
 #elif GERMAN
-        .alphabeticalOrder = 29,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_HEART),
 #endif
         .enabled = TRUE,
     },
@@ -199,9 +199,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Loser,
 #if ENGLISH
-        .alphabeticalOrder = 12,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_KIDDING),
 #elif GERMAN
-        .alphabeticalOrder = 4,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MUCH_OBLIGED),
 #endif
         .enabled = TRUE,
     },
@@ -209,9 +209,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Losing,
 #if ENGLISH
-        .alphabeticalOrder = 23,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_KNOCKOUT),
 #elif GERMAN
-        .alphabeticalOrder = 5,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_YEEHAW_EXCL),
 #endif
         .enabled = TRUE,
     },
@@ -219,9 +219,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Happening,
 #if ENGLISH
-        .alphabeticalOrder = 0,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_KTHX_BYE),
 #elif GERMAN
-        .alphabeticalOrder = 31,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_YOUNG),
 #endif
         .enabled = TRUE,
     },
@@ -229,9 +229,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_HipAnd,
 #if ENGLISH
-        .alphabeticalOrder = 13,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LOSER),
 #elif GERMAN
-        .alphabeticalOrder = 8,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_DESTINY),
 #endif
         .enabled = TRUE,
     },
@@ -239,9 +239,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Shake,
 #if ENGLISH
-        .alphabeticalOrder = 14,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LOSING),
 #elif GERMAN
-        .alphabeticalOrder = 26,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_FEVER),
 #endif
         .enabled = TRUE,
     },
@@ -249,9 +249,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Shady,
 #if ENGLISH
-        .alphabeticalOrder = 6,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MEGA),
 #elif GERMAN
-        .alphabeticalOrder = 25,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WINNER),
 #endif
         .enabled = TRUE,
     },
@@ -259,9 +259,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Upbeat,
 #if ENGLISH
-        .alphabeticalOrder = 20,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MODERN),
 #elif GERMAN
-        .alphabeticalOrder = 23,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_KNOCKOUT),
 #endif
         .enabled = TRUE,
     },
@@ -269,9 +269,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Modern,
 #if ENGLISH
-        .alphabeticalOrder = 4,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MUCH_OBLIGED),
 #elif GERMAN
-        .alphabeticalOrder = 13,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LOSER),
 #endif
         .enabled = TRUE,
     },
@@ -279,9 +279,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_SmellYa,
 #if ENGLISH
-        .alphabeticalOrder = 10,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NEW),
 #elif GERMAN
-        .alphabeticalOrder = 6,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MEGA),
 #endif
         .enabled = TRUE,
     },
@@ -289,9 +289,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Bang,
 #if ENGLISH
-        .alphabeticalOrder = 30,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OLD),
 #elif GERMAN
-        .alphabeticalOrder = 20,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_MODERN),
 #endif
         .enabled = TRUE,
     },
@@ -299,9 +299,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Knockout,
 #if ENGLISH
-        .alphabeticalOrder = 18,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SHADY),
 #elif GERMAN
-        .alphabeticalOrder = 9,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_CANCEL),
 #endif
         .enabled = TRUE,
     },
@@ -309,9 +309,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Hassle,
 #if ENGLISH
-        .alphabeticalOrder = 17,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SHAKE),
 #elif GERMAN
-        .alphabeticalOrder = 30,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_OLD),
 #endif
         .enabled = TRUE,
     },
@@ -319,9 +319,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Winner,
 #if ENGLISH
-        .alphabeticalOrder = 21,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SMELL_YA),
 #elif GERMAN
-        .alphabeticalOrder = 10,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_NEW),
 #endif
         .enabled = TRUE,
     },
@@ -329,9 +329,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Fever,
 #if ENGLISH
-        .alphabeticalOrder = 32,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_UGLY),
 #elif GERMAN
-        .alphabeticalOrder = 18,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SHADY),
 #endif
         .enabled = TRUE,
     },
@@ -339,9 +339,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Wannabe,
 #if ENGLISH
-        .alphabeticalOrder = 19,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_UPBEAT),
 #elif GERMAN
-        .alphabeticalOrder = 21,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_SMELL_YA),
 #endif
         .enabled = TRUE,
     },
@@ -349,9 +349,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Baby,
 #if ENGLISH
-        .alphabeticalOrder = 27,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WANNABE),
 #elif GERMAN
-        .alphabeticalOrder = 12,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_KIDDING),
 #endif
         .enabled = TRUE,
     },
@@ -359,9 +359,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Heart,
 #if ENGLISH
-        .alphabeticalOrder = 25,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_WINNER),
 #elif GERMAN
-        .alphabeticalOrder = 22,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_BANG),
 #endif
         .enabled = TRUE,
     },
@@ -369,9 +369,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Old,
 #if ENGLISH
-        .alphabeticalOrder = 5,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_YEEHAW_EXCL),
 #elif GERMAN
-        .alphabeticalOrder = 0,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_KTHX_BYE),
 #endif
         .enabled = TRUE,
     },
@@ -379,9 +379,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Young,
 #if ENGLISH
-        .alphabeticalOrder = 1,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_YES_SIR_EXCL),
 #elif GERMAN
-        .alphabeticalOrder = 3,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_COUPLE),
 #endif
         .enabled = TRUE,
     },
@@ -389,9 +389,9 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     {
         .text = gEasyChatWord_Ugly,
 #if ENGLISH
-        .alphabeticalOrder = 31,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_YOUNG),
 #elif GERMAN
-        .alphabeticalOrder = 14,
+        .alphabeticalOrder = EC_INDEX(EC_WORD_LOSING),
 #endif
         .enabled = TRUE,
     },
